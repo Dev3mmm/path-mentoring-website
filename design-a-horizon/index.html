@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P.A.T.H. | Preparing Adolescents Through Horizons</title>
+<meta name="description" content="P.A.T.H. is a community-based mentoring program that opens teens' eyes to careers, trades, college, entrepreneurship and hobbies through real-world experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a1f3d;--muted:#6b6280;--cream:#fff8ef;--sun:#ffb347;--coral:#ff6b6b;--plum:#4b2e83;--sky:#7fc8f8;--card:#fff;--r:22px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.65 Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:26px;text-decoration:none;letter-spacing:.5px}
+.logo span{color:var(--coral)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:15px}
+.btn{display:inline-block;background:var(--plum);color:#fff!important;padding:13px 26px;border-radius:99px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--plum)!important;box-shadow:inset 0 0 0 2px var(--plum)}
+.hero{background:linear-gradient(180deg,#ffd9a0 0%,#ffb88a 45%,#ff8f8f 100%);position:relative;overflow:hidden;padding-bottom:140px}
+.hero .wrap{padding-top:10px}
+.hero h1{font-size:clamp(40px,6.4vw,76px);max-width:780px;margin-top:60px}
+.hero p.lead{font-size:20px;max-width:560px;margin:22px 0 32px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.sun{position:absolute;right:-80px;top:80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#fff6c9,#ffd36b 55%,transparent 70%);opacity:.9}
+.hills{position:absolute;bottom:-2px;left:0;width:100%}
+section{padding:90px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:600;color:var(--coral);margin-bottom:10px}
+h2{font-size:clamp(30px,4vw,46px);margin-bottom:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:40px}
+.card{background:var(--card);border-radius:var(--r);padding:28px;box-shadow:0 8px 30px rgba(75,46,131,.08)}
+.card .ic{font-size:30px;margin-bottom:10px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15.5px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:s}
+.step{background:#fff;border-radius:var(--r);padding:26px;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sun);font-weight:700;margin-bottom:12px}
+.step b{font-family:Fraunces,serif;font-size:20px;display:block}
+.band{background:var(--plum);color:#fff;border-radius:34px;padding:60px 50px}
+.band h2{color:#fff}.band p{color:#e8def7}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chips span{background:rgba(255,255,255,.14);padding:9px 18px;border-radius:99px;font-weight:500;font-size:15px}
+form{display:grid;gap:14px}
+input,select,textarea{width:100%;padding:14px 16px;border-radius:14px;border:2px solid #eadff7;font:inherit;background:#fff}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--plum)}
+footer{background:#241a38;color:#cfc6e2;padding:50px 0;font-size:15px}
+footer .logo{color:#fff}
+@media(max-width:820px){.two,.steps{grid-template-columns:1fr}nav ul li:not(:last-child){display:none}.sun{width:260px;height:260px}.band{padding:40px 26px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="sun"></div>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#">P<span>.</span>A<span>.</span>T<span>.</span>H<span>.</span></a>
+      <ul><li><a href="#about">About</a></li><li><a href="#activities">Activities</a></li><li><a href="#approach">Our Approach</a></li><li><a href="#join">Get Involved</a></li><li><a class="btn" href="#join">Join Us</a></li></ul>
+    </nav>
+    <h1>Every teen deserves to see what's possible.</h1>
+    <p class="lead">Preparing Adolescents Through Horizons connects young people with mentors, careers, trades and real-world experiences, so they can find a path worth walking.</p>
+    <div class="cta"><a class="btn" href="#join">Become a Mentor</a><a class="btn alt" href="#join">Sign Up a Teen</a></div>
+  </div>
+  <svg class="hills" viewBox="0 0 1440 120" preserveAspectRatio="none" height="120"><path fill="#fff8ef" d="M0 120V70c180-60 340-60 520-20s360 50 560-10 260-30 360 0v80z"/></svg>
+</header>
+
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <div class="eyebrow">Why we exist</div>
+      <h2>You can't chase an opportunity you've never seen.</h2>
+      <p>Many teens near graduation feel unsure about what comes next. It isn't a lack of ability. They simply haven't had the chance to try things, meet people and explore.</p>
+      <p style="margin-top:14px">P.A.T.H. goes beyond talking about careers. We let students experience them, ask questions, meet professionals and discover for themselves.</p>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#fff,#ffeccd)">
+      <h3 style="font-size:26px">Our belief</h3>
+      <p style="font-size:19px;color:var(--ink);margin-top:10px">Exposure creates possibility. Exploration sparks curiosity. Meaningful experiences inspire purpose.</p>
+    </div>
+  </div>
+</section>
+
+<section id="activities" style="background:#fff;padding-bottom:100px">
+  <div class="wrap">
+    <div class="eyebrow">What we do</div>
+    <h2>Real experiences, not just conversations.</h2>
+    <div class="grid">
+      <div class="card"><div class="ic">🤝</div><h3>Mentor Talk Sessions</h3><p>One-on-one and small-group conversations with caring adults who've walked different roads.</p></div>
+      <div class="card"><div class="ic">🎤</div><h3>Guest Speakers</h3><p>Professionals, tradespeople, creators and founders share how they got where they are.</p></div>
+      <div class="card"><div class="ic">🏛️</div><h3>Museums &amp; Field Trips</h3><p>Hands-on outings and travel that put the wider world within reach.</p></div>
+      <div class="card"><div class="ic">🎓</div><h3>College Visits</h3><p>Walk real campuses, meet students and admissions staff, and picture the next step.</p></div>
+      <div class="card"><div class="ic">💼</div><h3>Internships &amp; Job Shadowing</h3><p>Time inside local businesses and with professionals to see the work up close.</p></div>
+      <div class="card"><div class="ic">🏀</div><h3>Sports &amp; Service Events</h3><p>Team-building, community service and fun that builds confidence and character.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="eyebrow">Our approach</div>
+    <h2>From exposure to purpose.</h2>
+    <div class="steps">
+      <div class="step"><b>Exposure</b>Students meet careers, trades, creative fields and ideas they never knew existed.</div>
+      <div class="step"><b>Curiosity</b>Hands-on activities spark questions and reveal natural interests and strengths.</div>
+      <div class="step"><b>Motivation</b>Confidence grows as teens see what's possible and who can help them get there.</div>
+      <div class="step"><b>Purpose</b>They set meaningful goals and take intentional steps toward the future they want.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap"><div class="band">
+    <div class="eyebrow" style="color:var(--sun)">Every path counts</div>
+    <h2>College. Trades. Business. Creative work. A lifelong passion.</h2>
+    <p style="max-width:660px">We don't push one road. We help each teen find the one that inspires them.</p>
+    <div class="chips"><span>College</span><span>Technical training</span><span>Skilled trades</span><span>Entrepreneurship</span><span>Employment</span><span>Creative pursuits</span><span>Meaningful hobbies</span></div>
+  </div></div>
+</section>
+
+<section id="mission" style="padding-top:20px">
+  <div class="wrap two">
+    <div class="card"><div class="eyebrow">Mission</div><p>P.A.T.H. empowers young people to discover their interests, explore new opportunities, and develop a sense of purpose through exposure to careers, hobbies, education, entrepreneurship, and real-world experiences.</p></div>
+    <div class="card"><div class="eyebrow">Vision</div><p>A future where every young person has the exposure, encouragement and opportunity to discover their passions and confidently pursue a meaningful path beyond high school.</p></div>
+  </div>
+</section>
+
+<section id="join" style="background:#fff">
+  <div class="wrap two" style="align-items:start">
+    <div>
+      <div class="eyebrow">Get involved</div>
+      <h2>Be part of someone's first step.</h2>
+      <p>Mentor a teen, host a job-shadow day, speak to students, sponsor an outing, or sign up a young person you care about.</p>
+      <p style="margin-top:18px;color:var(--muted)">📍 [Meeting location, City, State]<br>✉️ [email@yourdomain.org]<br>📞 [Phone]</p>
+    </div>
+    <form action="#" method="post" onsubmit="event.preventDefault();alert('Demo form: will connect to the live form service.')">
+      <input placeholder="Your name" required>
+      <input type="email" placeholder="Email" required>
+      <select><option>I want to…</option><option>Become a mentor</option><option>Enroll a teen</option><option>Offer an internship / job shadow</option><option>Speak to students</option><option>Partner or sponsor</option></select>
+      <textarea rows="4" placeholder="Tell us a little more"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px">
+  <a class="logo" href="#">P<span>.</span>A<span>.</span>T<span>.</span>H<span>.</span></a>
+  <div>Preparing Adolescents Through Horizons · © <script>document.write(new Date().getFullYear())</script></div>
+</div></footer>
+</body>
+</html>

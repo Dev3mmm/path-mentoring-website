@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P.A.T.H. | Preparing Adolescents Through Horizons</title>
+<meta name="description" content="A community-based youth mentoring program expanding teens' horizons through career exploration, mentorship and real-world experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1f4d3a;--moss:#5e8c61;--sand:#f4efe6;--ink:#1d2a24;--gold:#b8892b;--line:#d9d2c3}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:18px/1.7 "Source Sans 3",system-ui,sans-serif;color:var(--ink);background:#fdfbf7}
+h1,h2,h3{font-family:"Libre Baskerville",Georgia,serif;font-weight:700;line-height:1.25}
+a{color:inherit}
+.wrap{max-width:1080px;margin:auto;padding:0 24px}
+.topbar{background:var(--forest);color:#e6efe9;font-size:14px;text-align:center;padding:8px}
+nav{border-bottom:1px solid var(--line);background:#fdfbf7;position:sticky;top:0;z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:78px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:40px;height:40px}
+.logo b{font-family:"Libre Baskerville";font-size:22px;color:var(--forest);letter-spacing:1px;display:block;line-height:1}
+.logo small{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--moss)}
+nav ul{display:flex;gap:28px;list-style:none;padding:0;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:15px}
+.btn{display:inline-block;background:var(--forest);color:#fff!important;padding:13px 28px;border-radius:4px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px;transition:.2s}
+.btn:hover{background:#163a2b}
+.btn.o{background:transparent;color:var(--forest)!important;box-shadow:inset 0 0 0 2px var(--forest)}
+.hero{position:relative;background:var(--sand);overflow:hidden}
+.topo{position:absolute;inset:0;opacity:.5;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' fill='none' stroke='%235e8c61' stroke-opacity='.35'%3E%3Cellipse cx='420' cy='200' rx='60' ry='40'/%3E%3Cellipse cx='420' cy='200' rx='110' ry='75'/%3E%3Cellipse cx='420' cy='200' rx='160' ry='110'/%3E%3Cellipse cx='420' cy='200' rx='210' ry='145'/%3E%3Cellipse cx='420' cy='200' rx='260' ry='180'/%3E%3Cellipse cx='420' cy='200' rx='310' ry='215'/%3E%3C/svg%3E") right center/cover no-repeat}
+.hero .wrap{position:relative;padding-top:100px;padding-bottom:110px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.kicker{font-weight:700;letter-spacing:2.5px;text-transform:uppercase;font-size:13px;color:var(--gold);margin-bottom:16px}
+.hero h1{font-size:clamp(34px,5vw,58px);color:var(--forest)}
+.hero p.lead{font-size:20px;margin:22px 0 32px;max-width:560px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.stat{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px;box-shadow:0 12px 40px rgba(31,77,58,.1)}
+.stat h3{font-size:18px;color:var(--forest);margin-bottom:12px}
+.stat ol{padding-left:20px}.stat li{margin:6px 0}
+section{padding:90px 0}
+h2{font-size:clamp(28px,3.6vw,40px);color:var(--forest);margin-bottom:16px}
+.rule{width:56px;height:3px;background:var(--gold);margin-bottom:22px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.item{padding:28px 28px 28px 0;border-bottom:1px solid var(--line);display:flex;gap:18px}
+.item .num{font-family:"Libre Baskerville";color:var(--gold);font-size:22px;min-width:36px}
+.item h3{font-size:19px;margin-bottom:4px;color:var(--forest)}
+.item p{font-size:16.5px;color:#4a574f}
+.dark{background:var(--forest);color:#e6efe9}
+.dark h2{color:#fff}.dark .kicker{color:#e3c27a}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:40px}
+.pillars div{border-top:3px solid var(--gold);padding-top:16px}
+.pillars b{font-family:"Libre Baskerville";font-size:20px;display:block;margin-bottom:6px;color:#fff}
+.pillars p{font-size:16px;color:#c9d9cf}
+.quote{font-family:"Libre Baskerville";font-size:clamp(22px,2.8vw,30px);line-height:1.5;color:var(--forest);border-left:4px solid var(--gold);padding-left:28px;max-width:860px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.tags span{border:1px solid var(--moss);color:var(--forest);padding:6px 16px;border-radius:99px;font-size:15px;font-weight:600;background:#fff}
+form{display:grid;gap:14px}
+input,select,textarea{width:100%;padding:13px 14px;border:1px solid #bfb7a5;border-radius:4px;font:inherit;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--moss);border-color:var(--moss)}
+footer{background:#14221b;color:#a9bbb0;padding:48px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+@media(max-width:860px){.hero .wrap,.two,.pillars{grid-template-columns:1fr}nav ul li:not(:last-child){display:none}.hero .wrap{padding-top:60px}}
+</style>
+</head>
+<body>
+<div class="topbar">A community-based youth mentoring program · [City, State]</div>
+<nav><div class="wrap">
+  <a class="logo" href="#"><svg viewBox="0 0 40 40" fill="none" stroke="#1f4d3a" stroke-width="2.5" stroke-linecap="round"><circle cx="20" cy="20" r="17"/><path d="M8 28c6-2 8-8 12-8s6-8 12-10"/><circle cx="32" cy="10" r="2.5" fill="#b8892b" stroke="none"/></svg><span><b>P.A.T.H.</b><small>Preparing Adolescents Through Horizons</small></span></a>
+  <ul><li><a href="#about">About</a></li><li><a href="#programs">Programs</a></li><li><a href="#approach">Approach</a></li><li><a href="#contact">Contact</a></li><li><a class="btn" href="#contact">Get Involved</a></li></ul>
+</div></nav>
+
+<header class="hero"><div class="topo"></div><div class="wrap">
+  <div>
+    <div class="kicker">Mentorship · Exposure · Purpose</div>
+    <h1>Helping young people discover the path that's right for them.</h1>
+    <p class="lead">We broaden teens' horizons through mentors, career exploration and real-world experiences, so they can step into life after high school with confidence and direction.</p>
+    <div class="btns"><a class="btn" href="#contact">Become a Mentor</a><a class="btn o" href="#programs">Explore Programs</a></div>
+  </div>
+  <aside class="stat"><h3>Paths we help students explore</h3><ol><li>College &amp; technical training</li><li>Skilled trades</li><li>Entrepreneurship</li><li>Creative fields</li><li>Employment &amp; careers</li><li>Lifelong hobbies</li></ol></aside>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <div class="kicker">Our purpose</div><div class="rule"></div>
+  <p class="quote">Young people cannot pursue opportunities they do not know exist.</p>
+  <div class="two" style="margin-top:44px">
+    <p>Many adolescents near graduation feel uncertain about the future, not from lack of ability, but from limited chances to discover their interests and experience different possibilities firsthand.</p>
+    <p>P.A.T.H. moves beyond simply describing options. We help students experience, explore, ask questions and connect with mentors, so they can discover possibilities for themselves.</p>
+  </div>
+</div></section>
+
+<section id="programs" style="background:var(--sand)"><div class="wrap">
+  <div class="kicker">What we offer</div><div class="rule"></div>
+  <h2>Programs and experiences</h2>
+  <div class="list">
+    <div class="item"><span class="num">01</span><div><h3>Mentor &amp; Mentee Sessions</h3><p>Consistent, caring conversations with positive adult role models.</p></div></div>
+    <div class="item"><span class="num">02</span><div><h3>Guest Speakers</h3><p>Professionals and tradespeople share their journeys and answer questions.</p></div></div>
+    <div class="item"><span class="num">03</span><div><h3>Museums &amp; Educational Trips</h3><p>Field trips and travel that expand students' view of the world.</p></div></div>
+    <div class="item"><span class="num">04</span><div><h3>College Visits</h3><p>Campus tours that make higher education tangible and approachable.</p></div></div>
+    <div class="item"><span class="num">05</span><div><h3>Internships &amp; Mentorships</h3><p>Partnerships with local businesses and professionals for hands-on learning.</p></div></div>
+    <div class="item"><span class="num">06</span><div><h3>Sports &amp; Community Service</h3><p>Teamwork, leadership and giving back to the community we serve.</p></div></div>
+  </div>
+</div></section>
+
+<section id="approach" class="dark"><div class="wrap">
+  <div class="kicker">Theory of change</div><div class="rule"></div>
+  <h2>From exposure to purposeful action</h2>
+  <p style="max-width:720px;color:#c9d9cf">We believe exposure creates possibility, exploration sparks curiosity, and meaningful experiences inspire purpose.</p>
+  <div class="pillars">
+    <div><b>Expose</b><p>Introduce a broad range of careers, industries, trades and educational paths.</p></div>
+    <div><b>Explore</b><p>Hands-on activities and professional interaction reveal interests and talents.</p></div>
+    <div><b>Empower</b><p>Students recognize strengths and build confidence in what they can do.</p></div>
+    <div><b>Act</b><p>Informed goals and intentional steps toward a purposeful future.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap two">
+  <div><div class="kicker">Mission</div><div class="rule"></div><p>P.A.T.H. inspires, exposes and empowers young people to explore the possibilities beyond high school through meaningful experiences, mentorship and career exploration, helping them discover their interests and build the confidence to create a purposeful future.</p></div>
+  <div><div class="kicker">Vision</div><div class="rule"></div><p>A future where every young person has the exposure, encouragement and opportunity to discover their passions and confidently pursue a meaningful path beyond high school.</p></div>
+</div></section>
+
+<section id="contact" style="background:var(--sand)"><div class="wrap two">
+  <div>
+    <div class="kicker">Get involved</div><div class="rule"></div>
+    <h2>Partner with us</h2>
+    <p>Mentors, local businesses, schools, speakers and sponsors all help open doors for our students.</p>
+    <div class="tags"><span>Mentor</span><span>Host a job shadow</span><span>Speak</span><span>Sponsor</span><span>Enroll a teen</span></div>
+    <p style="margin-top:26px">📍 [Meeting location, City, State]<br>✉️ [email@yourdomain.org]<br>📞 [Phone]</p>
+  </div>
+  <form action="#" method="post" onsubmit="event.preventDefault();alert('Demo form: will connect to the live form service.')">
+    <input placeholder="Full name" required><input type="email" placeholder="Email address" required>
+    <select><option>How would you like to help?</option><option>Become a mentor</option><option>Enroll a teen</option><option>Offer internship / job shadow</option><option>Guest speaker</option><option>Sponsor / partner</option></select>
+    <textarea rows="4" placeholder="Message"></textarea>
+    <button class="btn" type="submit">Submit</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><div><b style="color:#fff;font-family:'Libre Baskerville'">P.A.T.H.</b><br>Preparing Adolescents Through Horizons</div><div>© <script>document.write(new Date().getFullYear())</script> P.A.T.H. All rights reserved.</div></div></footer>
+</body>
+</html>
