@@ -16,6 +16,8 @@ US-based community mentoring nonprofit. Goal: **zero recurring cost except the d
 design-a-scrapbook/   Taped-photo collage
 design-b-transit/      Transit-map concept
 design-c-cinematic/    Film-title concept
+design-d-foundation/   Official, institutional (recommended)
+design-e-pathways/     Official, interactive pathway explorer
 index.html            Chooser page for client review
 ```
 After the client picks, the winning design becomes the site root and gets extra pages
@@ -27,3 +29,7 @@ After the client picks, the winning design becomes the site root and gets extra 
 - Whether they're a registered 501(c)(3) (affects Donate page and wording)
 - Domain name
 - Mentor screening / youth-safety policy page (strongly recommended for any youth program)
+
+## Notes
+- All photos in `assets/img` are AI-generated placeholders. Replace with real program photos (with written consent) before launch.
+- Items marked [confirm] (safety commitments, eligibility, fees) are drafts for P.A.T.H. leadership to finalize.

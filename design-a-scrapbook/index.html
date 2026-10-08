@@ -91,13 +91,45 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
 .rv.in{opacity:1;translate:0 0}
 @media(max-width:860px){.hero,.why,.join,.acts,.srow{grid-template-columns:1fr}.stack{height:480px}.p1{width:230px}.p2{width:210px}.p3{width:220px;left:60px;top:250px}nav ul li:not(:last-child){display:none}.arrow{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;translate:0}}
+
+/* --- brief content --- */
+.sec2{padding:90px 0}
+.paper{background:var(--paper);padding:34px;box-shadow:0 12px 26px rgba(0,0,0,.2);position:relative}
+.paper::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:30px;margin-left:-48px;background:rgba(255,217,59,.85);transform:rotate(-2deg);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.chal2{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.chal2 .paper:nth-child(1){transform:rotate(-1.4deg)}.chal2 .paper:nth-child(2){transform:rotate(1deg)}
+.chal2 blockquote{font-family:Caprasimo;font-size:clamp(30px,4vw,48px);line-height:1.08}
+.outs2{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px}
+.outs2 div{background:#fff;padding:24px 22px;box-shadow:0 8px 18px rgba(0,0,0,.15);position:relative}
+.outs2 div:nth-child(odd){transform:rotate(-1deg)}.outs2 div:nth-child(even){transform:rotate(1.2deg)}
+.outs2 b{font-family:Caprasimo;font-weight:400;font-size:40px;color:var(--red);display:block;line-height:1}
+.toc2{margin-top:46px;background:var(--ink);color:var(--paper);padding:44px;transform:rotate(-.6deg)}
+.toc2 h3{font-family:Caveat;font-size:36px;color:var(--yellow);margin-bottom:8px}
+.pw2{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:46px}
+.pw2 figure{background:#fff;padding:12px 12px 20px;box-shadow:0 12px 24px rgba(0,0,0,.22);transition:.3s;margin:0}
+.pw2 figure:nth-child(3n+1){transform:rotate(-2deg)}.pw2 figure:nth-child(3n+2){transform:rotate(1.4deg)}.pw2 figure:nth-child(3n){transform:rotate(-.8deg)}
+.pw2 figure:hover{transform:rotate(0) scale(1.04);z-index:2}
+.pw2 img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.pw2 h3{font-size:24px;margin:12px 6px 4px}.pw2 p{font-size:15.5px;margin:0 6px;color:#4b443a}
+.mv2{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:20px}
+.mv2 h2{font-size:clamp(32px,4vw,52px)}
+.mv2 p{margin-top:14px}
+.safe2{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.safe2 ul{list-style:none;padding:0;display:grid;gap:14px}
+.safe2 li{background:#fff;padding:18px 22px;box-shadow:0 6px 14px rgba(0,0,0,.14);border-left:6px solid var(--green)}
+.safe2 li b{display:block}.safe2 li span{font-size:15.5px;color:#4b443a}
+.hnote{font-family:Caveat;font-size:24px;color:var(--red);margin-top:14px}
+.faq2 details{background:#fff;margin-bottom:12px;padding:18px 24px;box-shadow:0 6px 14px rgba(0,0,0,.12)}
+.faq2 summary{cursor:pointer;font-family:Caprasimo;font-size:22px}
+.faq2 p{margin-top:10px;color:#4b443a}
+@media(max-width:860px){.chal2,.mv2,.safe2,.pw2,.outs2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav>
   <a class="logo" href="#"><i>↗</i>P.A.T.H.</a>
-  <ul><li><a href="#why">Why</a></li><li><a href="#do">What we do</a></li><li><a href="#how">How it works</a></li><li><a class="btn" href="#join">Join in</a></li></ul>
+  <ul><li><a href="#why">Why</a></li><li><a href="#do">What we do</a></li><li><a href="#how">How it works</a></li><li><a href="#pathways">Pathways</a></li><li><a class="btn" href="#join">Join in</a></li></ul>
 </nav>
 <header class="hero">
   <div>
@@ -107,10 +139,10 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
     <a class="btn" href="#join">Become a mentor</a> &nbsp; <a class="btn y" href="#join">Sign up a teen</a>
   </div>
   <div class="stack">
-    <div class="pol p1"><img src="../assets/img/laptop.webp" alt="Student sitting on school steps with a laptop and backpack" fetchpriority="high"><div class="cap hand">first day of senior year</div></div>
-    <div class="pol p2"><img src="../assets/img/trades.webp" alt="Teen learning from an electrician" loading="lazy"><div class="cap hand">turns out I love wiring</div></div>
-    <div class="pol p3"><img src="../assets/img/campus.webp" alt="Teens touring a college campus" loading="lazy"><div class="cap hand">campus tour #2</div></div>
-    <div class="sticker">100% hands-on</div>
+    <div class="pol p1"><img src="../assets/img/laptop.webp" alt="Student sitting on school steps with a laptop and backpack" fetchpriority="high"><div class="cap hand">step one</div></div>
+    <div class="pol p2"><img src="../assets/img/trades.webp" alt="Teen learning from an electrician" loading="lazy"><div class="cap hand">trying the trades</div></div>
+    <div class="pol p3"><img src="../assets/img/campus.webp" alt="Teens touring a college campus" loading="lazy"><div class="cap hand">campus visit</div></div>
+    <div class="sticker">hands-on</div>
   </div>
 </header>
 </div>
@@ -153,6 +185,36 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
   </div>
 </div></section>
 
+
+<section class="sec2" id="theory"><div class="wrap">
+  <div class="chal2">
+    <div class="paper rv"><div class="hand" style="color:var(--red);font-size:28px">the challenge</div><blockquote>Young people cannot pursue opportunities they do not know exist.</blockquote></div>
+    <div class="paper rv"><p>Some adolescents approach high school graduation with uncertainty about their future, not because they lack ability or potential, but because they may not have had enough opportunities to discover their interests or experience different possibilities firsthand.</p><p style="margin-top:14px">Traditional career conversations may introduce students to occupations, but P.A.T.H. seeks to move beyond simply telling young people what is available by allowing them to experience, explore, ask questions, connect with mentors, and discover possibilities for themselves.</p></div>
+  </div>
+  <h2 class="rv" style="margin-top:80px">We believe exposure creates possibility.</h2>
+  <p class="rv" style="max-width:700px">P.A.T.H. believes that exposure creates possibility, exploration sparks curiosity, and meaningful experiences can inspire purpose. When adolescents are intentionally exposed to a broad range of careers, industries, hobbies, educational opportunities, skilled trades, entrepreneurship, creative pursuits, mentors, and life experiences, they are more likely to:</p>
+  <div class="outs2"><div class="rv"><b>1</b>Discover new interests and talents.</div><div class="rv"><b>2</b>Recognize their individual strengths.</div><div class="rv"><b>3</b>Understand the variety of pathways available after high school.</div><div class="rv"><b>4</b>Develop confidence in their ability to pursue those opportunities.</div><div class="rv"><b>5</b>Establish meaningful personal, educational, and career goals.</div><div class="rv"><b>6</b>Take intentional steps toward building the future they want.</div></div>
+  <div class="toc2 rv"><h3>our theory of change</h3><p>If P.A.T.H. provides adolescents with meaningful exposure to diverse careers, hobbies, educational pathways, skilled trades, entrepreneurship, mentorship, and real-world experiences, then young people will have greater opportunities to discover their interests, identify their strengths, expand their understanding of what is possible, and develop confidence in their abilities. As a result, they will be better equipped to establish meaningful goals, make informed decisions, and pursue purposeful pathways beyond high school.</p></div>
+</div></section>
+
+<section class="sec2" id="pathways"><div class="wrap">
+  <h2 class="rv">Every path counts.</h2>
+  <p class="rv" style="max-width:640px">We help every young person find a path that inspires them, whether that leads to college, technical training, entrepreneurship, a skilled trade, employment, creative pursuits, or a meaningful lifelong hobby.</p>
+  <div class="pw2"><figure class="rv"><img src="../assets/img/campus.webp" alt="" loading="lazy"><h3>College</h3><p>Campus visits, student conversations and mentors who share their own journeys.</p></figure><figure class="rv"><img src="../assets/img/trades.webp" alt="" loading="lazy"><h3>Technical training &amp; skilled trades</h3><p>Meet working tradespeople, try the work and visit training programs.</p></figure><figure class="rv"><img src="../assets/img/biz.webp" alt="" loading="lazy"><h3>Entrepreneurship</h3><p>Time inside local businesses and talks with the people who built them.</p></figure><figure class="rv"><img src="../assets/img/art.webp" alt="" loading="lazy"><h3>Creative pursuits</h3><p>Art, music, design and media explored alongside working creatives.</p></figure><figure class="rv"><img src="../assets/img/office.webp" alt="" loading="lazy"><h3>Employment</h3><p>Internships, job shadows and mentorships with professionals.</p></figure><figure class="rv"><img src="../assets/img/robotics.webp" alt="" loading="lazy"><h3>Meaningful lifelong hobbies</h3><p>Hands-on interests worth keeping for life, from robotics to the outdoors.</p></figure></div>
+</div></section>
+
+<section class="sec2" id="mission"><div class="wrap mv2">
+  <div class="paper rv"><h2>Our mission</h2><p>The mission of P.A.T.H. (Preparing Adolescents Through Horizons) is to inspire, expose, and empower young people to explore the possibilities available to them beyond high school. Through meaningful experiences, mentorship, career exploration, hands-on activities, and exposure to diverse opportunities, P.A.T.H. helps adolescents discover their interests, develop their strengths, and build the confidence needed to create a purposeful future.</p><p>We believe that exposure can spark curiosity, curiosity can create motivation, and motivation can lead to purpose.</p></div>
+  <div class="paper rv"><h2>Our vision</h2><p>The vision of P.A.T.H. is to create a future where every young person has the exposure, encouragement, and opportunities needed to discover their passions, recognize their potential, and confidently pursue a meaningful path beyond high school.</p><p>We envision adolescents entering adulthood with a sense of purpose, an understanding of the possibilities available to them, and the motivation to transform their interests and talents into fulfilling educational, career, entrepreneurial, or personal pursuits.</p></div>
+</div></section>
+
+<section class="sec2" id="families"><div class="wrap safe2">
+  <div class="rv"><h2>Your teen's safety comes first.</h2><p>Families trust us with their young people. These are the commitments we're building into every program.</p><div class="hand hnote">draft commitments, to be confirmed by P.A.T.H. leadership</div></div>
+  <ul class="rv"><li><b>Screened mentors</b><span>Background checks and references for every adult working with students. [confirm]</span></li><li><b>Two-adult rule</b><span>No mentor is alone with a student during program activities. [confirm]</span></li><li><b>Parent consent &amp; communication</b><span>Permission for trips and internships; schedules shared in advance. [confirm]</span></li><li><b>Photo &amp; privacy care</b><span>No student photos or details shared without written consent. [confirm]</span></li></ul>
+</div></section>
+
+<section class="sec2" id="faq"><div class="wrap" style="max-width:860px"><h2 class="rv">Questions, answered.</h2><div class="faq2 rv" style="margin-top:26px"><details><summary>Who can join P.A.T.H.?</summary><p>Young people in high school, grades 9 through 12. [Confirm age range and eligibility.]</p></details><details><summary>Does it cost anything for a student to take part?</summary><p>[Confirm: fees, scholarships or free participation.]</p></details><details><summary>Where and when do activities take place?</summary><p>In and around [City / County, State], with a regular meeting place at [location to be confirmed]. Schedules are shared with families in advance.</p></details><details><summary>I'm a professional or business owner. How can I help?</summary><p>Host a job shadow or internship, speak to students, or become a mentor. Use the contact form below.</p></details></div></div></section>
+
 <section id="join"><div class="wrap join">
   <div class="rv">
     <h2>Be someone's first step.</h2>
@@ -170,7 +232,7 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
   </div>
 </div></section>
 
-<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>P.A.T.H. · Preparing Adolescents Through Horizons</span><span>© <script>document.write(new Date().getFullYear())</script></span></div></footer>
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>P.A.T.H. · Preparing Adolescents Through Horizons</span><span>Photos shown are illustrative placeholders.</span><span>© <script>document.write(new Date().getFullYear())</script></span></div></footer>
 <script>
 const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),io.unobserve(x.target))),{threshold:.15});
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+'s';io.observe(el)});

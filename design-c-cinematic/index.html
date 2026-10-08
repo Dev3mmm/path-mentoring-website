@@ -99,11 +99,41 @@ footer{padding:44px 0;font-size:14px;color:var(--mut)}
 .spot{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(255,176,0,.10),transparent 65%);transform:translate(-50%,-50%);left:-999px;top:-999px}
 @media(max-width:860px){.bgrid,.jgrid{grid-template-columns:1fr}nav ul li:not(:last-child){display:none}nav{padding:16px 20px}.scroll,.spot{display:none}.film .copy{bottom:13vh}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.film img:first-child{opacity:1}.film h1 .w span{transform:none}.rv{opacity:1;translate:0}.mani p.b span{color:var(--cream)}}
+
+/* --- brief content --- */
+.sec3{padding:120px 0}
+.tw{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.big3{font-size:clamp(34px,5vw,74px)}
+.outs3{margin-top:50px;border-top:1px solid #333}
+.outs3 div{display:flex;gap:26px;align-items:baseline;padding:22px 0;border-bottom:1px solid #333;font-size:22px}
+.outs3 b{font-family:Anton;font-weight:400;font-size:44px;color:var(--amber);min-width:70px}
+.toc3{margin-top:70px;border:1px solid var(--amber);padding:48px;position:relative}
+.toc3 h3{position:absolute;top:-17px;left:34px;background:var(--ink);padding:0 16px;font-size:26px;color:var(--amber)}
+.toc3 p{font:400 italic 25px/1.55 Fraunces,serif;color:var(--cream)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.pgrid figure{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden}
+.pgrid img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75);transition:.9s cubic-bezier(.2,.7,.2,1)}
+.pgrid figure:hover img{transform:scale(1.07);filter:brightness(.95)}
+.pgrid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.9))}
+.pgrid figcaption{position:absolute;left:26px;right:26px;bottom:24px;z-index:2}
+.pgrid h3{font-size:34px}.pgrid p{font-size:15.5px;color:#d3cec1;margin-top:6px}
+.mv3{background:#111113}
+.mv3 p{font-size:19px;color:#cfcabc;margin-top:18px}
+.mv3 p+p{color:#8f8b80;font-size:17px}
+.safe4{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.safe4 ul{list-style:none;padding:0}
+.safe4 li{padding:22px 0;border-bottom:1px solid #333}
+.safe4 li b{display:block;font-family:Anton;font-weight:400;font-size:26px;text-transform:uppercase;color:var(--cream)}
+.safe4 li span{color:var(--mut);font-size:16px}
+.fq4 details{border-bottom:1px solid #333;padding:22px 0}
+.fq4 summary{cursor:pointer;font-family:Anton;text-transform:uppercase;font-size:26px;list-style:none}
+.fq4 p{color:var(--mut);margin-top:10px;max-width:720px}
+@media(max-width:860px){.tw,.safe4,.pgrid{grid-template-columns:1fr}.toc3{padding:36px 22px}}
 </style>
 </head>
 <body>
 <div class="spot" id="spot"></div>
-<nav><a class="logo" href="#">P.A.T.H.</a><ul><li><a href="#why">Why</a></li><li><a href="#chapters">Chapters</a></li><li><a href="#paths">Paths</a></li><li><a href="#join">Join</a></li></ul></nav>
+<nav><a class="logo" href="#">P.A.T.H.</a><ul><li><a href="#why">Why</a></li><li><a href="#chapters">Chapters</a></li><li><a href="#paths">Paths</a></li><li><a href="#mission">Mission</a></li><li><a href="#join">Join</a></li></ul></nav>
 
 <header class="film">
   <img src="../assets/img/hallway.webp" alt="" fetchpriority="high"><img src="../assets/img/laptop.webp" alt="" loading="lazy"><img src="../assets/img/campus.webp" alt="" loading="lazy"><img src="../assets/img/trades.webp" alt="" loading="lazy"><img src="../assets/img/service.webp" alt="" loading="lazy">
@@ -154,6 +184,33 @@ footer{padding:44px 0;font-size:14px;color:var(--mut)}
   </div>
 </div></section>
 
+
+<section class="sec3" id="theory"><div class="wrap">
+  <div class="tw">
+    <div class="rv"><div class="pre" style="font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:14px">The challenge</div><h2 class="big3">Young people cannot pursue opportunities they do not know exist.</h2></div>
+    <div class="rv"><p style="font-size:20px;color:#cfcabc">Some adolescents approach high school graduation with uncertainty about their future, not because they lack ability or potential, but because they may not have had enough opportunities to discover their interests or experience different possibilities firsthand.</p><p style="margin-top:18px;font-size:20px;color:#cfcabc">Traditional career conversations may introduce students to occupations, but P.A.T.H. seeks to move beyond simply telling young people what is available by allowing them to experience, explore, ask questions, connect with mentors, and discover possibilities for themselves.</p></div>
+  </div>
+  <p class="rv" style="margin-top:70px;max-width:760px;font-size:20px;color:#cfcabc">P.A.T.H. believes that exposure creates possibility, exploration sparks curiosity, and meaningful experiences can inspire purpose. When adolescents are intentionally exposed to a broad range of careers, industries, hobbies, educational opportunities, skilled trades, entrepreneurship, creative pursuits, mentors, and life experiences, they are more likely to:</p>
+  <div class="outs3 rv"><div><b>01</b><span>Discover new interests and talents.</span></div><div><b>02</b><span>Recognize their individual strengths.</span></div><div><b>03</b><span>Understand the variety of pathways available after high school.</span></div><div><b>04</b><span>Develop confidence in their ability to pursue those opportunities.</span></div><div><b>05</b><span>Establish meaningful personal, educational, and career goals.</span></div><div><b>06</b><span>Take intentional steps toward building the future they want.</span></div></div>
+  <div class="toc3 rv"><h3>Our theory of change</h3><p>If P.A.T.H. provides adolescents with meaningful exposure to diverse careers, hobbies, educational pathways, skilled trades, entrepreneurship, mentorship, and real-world experiences, then young people will have greater opportunities to discover their interests, identify their strengths, expand their understanding of what is possible, and develop confidence in their abilities. As a result, they will be better equipped to establish meaningful goals, make informed decisions, and pursue purposeful pathways beyond high school.</p></div>
+</div></section>
+
+<section class="sec3" id="pathways" style="padding-top:0"><div class="wrap"><h2 class="big3 rv" style="margin-bottom:40px">Six pathways.<br><span style="color:var(--amber)">One inspired future.</span></h2></div>
+  <div class="pgrid"><figure class="rv"><img src="../assets/img/campus.webp" alt="" loading="lazy"><figcaption><h3>College</h3><p>Campus visits, student conversations and mentors who share their own journeys.</p></figcaption></figure><figure class="rv"><img src="../assets/img/trades.webp" alt="" loading="lazy"><figcaption><h3>Technical training &amp; skilled trades</h3><p>Meet working tradespeople, try the work and visit training programs.</p></figcaption></figure><figure class="rv"><img src="../assets/img/biz.webp" alt="" loading="lazy"><figcaption><h3>Entrepreneurship</h3><p>Time inside local businesses and talks with the people who built them.</p></figcaption></figure><figure class="rv"><img src="../assets/img/art.webp" alt="" loading="lazy"><figcaption><h3>Creative pursuits</h3><p>Art, music, design and media explored alongside working creatives.</p></figcaption></figure><figure class="rv"><img src="../assets/img/office.webp" alt="" loading="lazy"><figcaption><h3>Employment</h3><p>Internships, job shadows and mentorships with professionals.</p></figcaption></figure><figure class="rv"><img src="../assets/img/robotics.webp" alt="" loading="lazy"><figcaption><h3>Meaningful lifelong hobbies</h3><p>Hands-on interests worth keeping for life, from robotics to the outdoors.</p></figcaption></figure></div>
+</section>
+
+<section class="sec3 mv3" id="mission"><div class="wrap tw">
+  <div class="rv"><div class="pre" style="font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);font-weight:700">Mission</div><h2 class="big3" style="margin-top:10px">Inspire. Expose. Empower.</h2><p>The mission of P.A.T.H. (Preparing Adolescents Through Horizons) is to inspire, expose, and empower young people to explore the possibilities available to them beyond high school. Through meaningful experiences, mentorship, career exploration, hands-on activities, and exposure to diverse opportunities, P.A.T.H. helps adolescents discover their interests, develop their strengths, and build the confidence needed to create a purposeful future.</p><p>We believe that exposure can spark curiosity, curiosity can create motivation, and motivation can lead to purpose.</p></div>
+  <div class="rv"><div class="pre" style="font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);font-weight:700">Vision</div><h2 class="big3" style="margin-top:10px">A path for every young person.</h2><p>The vision of P.A.T.H. is to create a future where every young person has the exposure, encouragement, and opportunities needed to discover their passions, recognize their potential, and confidently pursue a meaningful path beyond high school.</p><p>We envision adolescents entering adulthood with a sense of purpose, an understanding of the possibilities available to them, and the motivation to transform their interests and talents into fulfilling educational, career, entrepreneurial, or personal pursuits.</p></div>
+</div></section>
+
+<section class="sec3" id="families"><div class="wrap safe4">
+  <div class="rv"><h2 class="big3">Your teen's safety comes first.</h2><p style="margin-top:20px;font-size:19px;color:#cfcabc">Commitments we are building into every program.</p><p style="margin-top:14px;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:700">Draft: to be confirmed by P.A.T.H. leadership</p></div>
+  <ul class="rv"><li><b>Screened mentors</b><span>Background checks and references for every adult working with students. [confirm]</span></li><li><b>Two-adult rule</b><span>No mentor is alone with a student during program activities. [confirm]</span></li><li><b>Parent consent &amp; communication</b><span>Permission for trips and internships; schedules shared in advance. [confirm]</span></li><li><b>Photo &amp; privacy care</b><span>No student photos or details shared without written consent. [confirm]</span></li></ul>
+</div></section>
+
+<section class="sec3" style="padding-top:0"><div class="wrap" style="max-width:860px"><h2 class="big3 rv" style="margin-bottom:30px">Questions.</h2><div class="fq4 rv"><details><summary>Who can join P.A.T.H.?</summary><p>Young people in high school, grades 9 through 12. [Confirm age range and eligibility.]</p></details><details><summary>Does it cost anything for a student to take part?</summary><p>[Confirm: fees, scholarships or free participation.]</p></details><details><summary>Where and when do activities take place?</summary><p>In and around [City / County, State], with a regular meeting place at [location to be confirmed]. Schedules are shared with families in advance.</p></details><details><summary>I'm a professional or business owner. How can I help?</summary><p>Host a job shadow or internship, speak to students, or become a mentor. Use the contact form below.</p></details></div></div></section>
+
 <section class="join" id="join"><div class="wrap jgrid">
   <div class="rv">
     <h2>Join the<br>next scene.</h2>
@@ -167,7 +224,7 @@ footer{padding:44px 0;font-size:14px;color:var(--mut)}
     <button class="btn" type="submit">Send message</button>
   </form>
 </div></section>
-<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>P.A.T.H. · Preparing Adolescents Through Horizons</span><span>© <script>document.write(new Date().getFullYear())</script></span></div></footer>
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>P.A.T.H. · Preparing Adolescents Through Horizons · Photos shown are illustrative placeholders.</span><span>© <script>document.write(new Date().getFullYear())</script></span></div></footer>
 
 <script>
 // word-by-word manifesto reveal on scroll
