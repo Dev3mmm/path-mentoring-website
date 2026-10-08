@@ -13,9 +13,9 @@ US-based community mentoring nonprofit. Goal: **zero recurring cost except the d
 
 ## Structure
 ```
-design-a-horizon/     Warm, hopeful
-design-b-trailhead/   Bold, teen-facing
-design-c-fieldguide/  Polished, donor/school-facing
+design-a-scrapbook/   Taped-photo collage
+design-b-transit/      Transit-map concept
+design-c-cinematic/    Film-title concept
 index.html            Chooser page for client review
 ```
 After the client picks, the winning design becomes the site root and gets extra pages

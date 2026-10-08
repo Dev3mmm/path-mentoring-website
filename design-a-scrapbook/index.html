@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P.A.T.H. | Preparing Adolescents Through Horizons</title>
+<meta name="description" content="P.A.T.H. is a community mentoring program where teens try careers, trades, colleges and big ideas in real life, before they have to choose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Caveat:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--kraft:#e9dcc3;--paper:#fbf6ea;--ink:#1d1a16;--red:#e63b2e;--blue:#2457ff;--yellow:#ffd93b;--green:#1f9d6b}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:18px/1.6 "Work Sans",sans-serif;color:var(--ink);background:var(--kraft);
+background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1.5px);background-size:14px 14px;overflow-x:hidden}
+.hand{font-family:Caveat,cursive;font-weight:700}
+h1,h2,h3{font-family:Caprasimo,serif;font-weight:400;line-height:1.02}
+a{color:inherit}
+.wrap{max-width:1140px;margin:auto;padding:0 22px}
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-family:Caprasimo;font-size:30px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:38px;height:38px;border-radius:50%;background:var(--yellow);border:3px solid var(--ink);display:grid;place-items:center;font-style:normal;font-size:20px;transform:rotate(-8deg)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0;align-items:center;font-weight:600;font-size:15px}
+nav ul a{text-decoration:none}
+nav ul a:not(.btn):hover{background:var(--yellow)}
+.btn{display:inline-block;background:var(--ink);color:var(--paper)!important;padding:13px 24px;border-radius:4px;font-weight:600;text-decoration:none;transform:rotate(-1.5deg);box-shadow:4px 4px 0 var(--red);transition:.15s;border:0;cursor:pointer;font-size:17px;font-family:inherit}
+.btn:hover{transform:rotate(1deg) translateY(-2px);box-shadow:6px 6px 0 var(--red)}
+.btn.y{background:var(--yellow);color:var(--ink)!important;box-shadow:4px 4px 0 var(--ink)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:30px 0 90px}
+.hero h1{font-size:clamp(46px,7.4vw,96px);letter-spacing:-.02em}
+.hl{background:linear-gradient(transparent 55%,var(--yellow) 55%,var(--yellow) 92%,transparent 92%);padding:0 .08em}
+.hero .note{font-size:28px;color:var(--red);transform:rotate(-3deg);display:inline-block;margin:6px 0 10px}
+.hero p.l{max-width:480px;font-size:20px;margin:14px 0 30px}
+.stack{position:relative;height:660px}
+.pol{position:absolute;background:#fff;padding:12px 12px 52px;box-shadow:0 14px 30px rgba(0,0,0,.25);width:300px}
+.pol img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:saturate(1.1)}
+.pol .cap{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:25px}
+.pol::before{content:"";position:absolute;top:-16px;left:50%;width:100px;height:32px;margin-left:-50px;background:rgba(255,217,59,.8);transform:rotate(-3deg);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.p1{left:0;top:30px;transform:rotate(-7deg);animation:bob 7s ease-in-out infinite}
+.p2{right:0;top:0;transform:rotate(6deg);animation:bob 8s ease-in-out -2s infinite;width:270px}
+.p3{left:110px;top:350px;transform:rotate(-2deg);animation:bob 9s ease-in-out -4s infinite;width:280px}
+@keyframes bob{50%{translate:0 -12px}}
+.sticker{position:absolute;right:10px;bottom:60px;width:130px;height:130px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font-family:Caprasimo;font-size:20px;line-height:1.05;border:4px solid var(--ink);animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.arrow{position:absolute;left:46%;top:-6px;width:130px}
+.arrow path{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s .8s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+/* strip */
+.tape{background:var(--ink);color:var(--paper);transform:rotate(-1.4deg);margin:0 -30px;padding:14px 0;overflow:hidden;white-space:nowrap}
+.tape div{display:inline-block;animation:scroll 28s linear infinite;font-family:Caprasimo;font-size:26px}
+.tape span{margin:0 18px;color:var(--yellow)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:100px 0}
+h2{font-size:clamp(36px,5.2vw,68px);margin-bottom:22px;letter-spacing:-.01em}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.why .big{position:relative}
+.why .big img{width:100%;border:10px solid #fff;box-shadow:0 14px 30px rgba(0,0,0,.25);transform:rotate(2deg);aspect-ratio:4/3;object-fit:cover}
+.why .big .hand{position:absolute;left:-18px;bottom:-26px;background:var(--yellow);padding:6px 18px;font-size:30px;transform:rotate(-4deg);border:3px solid var(--ink)}
+/* activities as torn cards */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:50px}
+.act{background:var(--paper);padding:0 0 24px;box-shadow:0 10px 22px rgba(0,0,0,.18);transition:.25s;position:relative}
+.act:nth-child(1){transform:rotate(-1.5deg)}.act:nth-child(2){transform:rotate(1deg)}.act:nth-child(3){transform:rotate(-.8deg)}
+.act:nth-child(4){transform:rotate(1.2deg)}.act:nth-child(5){transform:rotate(-1deg)}.act:nth-child(6){transform:rotate(1.6deg)}
+.act:hover{transform:rotate(0) scale(1.04);z-index:2}
+.act img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;clip-path:polygon(0 0,100% 0,100% 94%,96% 97%,90% 94%,84% 98%,76% 94%,68% 97%,60% 94%,52% 98%,44% 94%,36% 97%,28% 94%,20% 98%,12% 94%,6% 97%,0 94%)}
+.act h3{font-size:26px;margin:14px 20px 6px}
+.act p{margin:0 20px;font-size:16px;color:#4b443a}
+.act .tag{position:absolute;top:12px;left:-10px;background:var(--blue);color:#fff;font-weight:600;font-size:13px;padding:3px 12px;transform:rotate(-4deg);letter-spacing:.5px}
+/* steps */
+.steps{background:var(--ink);color:var(--paper);clip-path:polygon(0 3%,100% 0,100% 97%,0 100%);padding:140px 0}
+.steps h2 em{font-style:normal;color:var(--yellow)}
+.srow{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:50px}
+.s{border-top:4px solid var(--yellow);padding-top:18px}
+.s .n{font-family:Caprasimo;font-size:70px;color:var(--yellow);line-height:1}
+.s b{font-family:Caprasimo;font-weight:400;font-size:28px;display:block;margin:6px 0}
+.s p{color:#d6cfbf;font-size:16.5px}
+.rise{margin-top:70px;display:flex;flex-wrap:wrap;gap:14px}
+.rise span{font-family:Caveat;font-weight:700;font-size:30px;background:var(--paper);color:var(--ink);padding:2px 22px;transform:rotate(var(--r));box-shadow:3px 3px 0 var(--red)}
+/* form */
+.join{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.card{background:var(--paper);padding:34px;box-shadow:0 14px 30px rgba(0,0,0,.2);transform:rotate(1deg)}
+form{display:grid;gap:14px}
+input,select,textarea{width:100%;padding:13px;border:2px solid var(--ink);border-radius:3px;font:inherit;background:#fff}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--yellow)}
+footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
+/* reveal */
+.rv{opacity:0;translate:0 30px;transition:.8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;translate:0 0}
+@media(max-width:860px){.hero,.why,.join,.acts,.srow{grid-template-columns:1fr}.stack{height:480px}.p1{width:230px}.p2{width:210px}.p3{width:220px;left:60px;top:250px}nav ul li:not(:last-child){display:none}.arrow{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;translate:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="#"><i>↗</i>P.A.T.H.</a>
+  <ul><li><a href="#why">Why</a></li><li><a href="#do">What we do</a></li><li><a href="#how">How it works</a></li><li><a class="btn" href="#join">Join in</a></li></ul>
+</nav>
+<header class="hero">
+  <div>
+    <div class="hand note">no pressure, just possibilities →</div>
+    <h1>Try the future <span class="hl">before</span> you pick it.</h1>
+    <p class="l">P.A.T.H. takes teens into real workshops, offices, campuses and conversations, so choosing life after high school stops being a guess.</p>
+    <a class="btn" href="#join">Become a mentor</a> &nbsp; <a class="btn y" href="#join">Sign up a teen</a>
+  </div>
+  <div class="stack">
+    <div class="pol p1"><img src="../assets/img/laptop.webp" alt="Student sitting on school steps with a laptop and backpack" fetchpriority="high"><div class="cap hand">first day of senior year</div></div>
+    <div class="pol p2"><img src="../assets/img/trades.webp" alt="Teen learning from an electrician" loading="lazy"><div class="cap hand">turns out I love wiring</div></div>
+    <div class="pol p3"><img src="../assets/img/campus.webp" alt="Teens touring a college campus" loading="lazy"><div class="cap hand">campus tour #2</div></div>
+    <div class="sticker">100% hands-on</div>
+  </div>
+</header>
+</div>
+
+<div class="tape"><div>
+<span>★</span>Careers<span>★</span>Skilled trades<span>★</span>College<span>★</span>Startups<span>★</span>Art &amp; design<span>★</span>Mentors<span>★</span>Careers<span>★</span>Skilled trades<span>★</span>College<span>★</span>Startups<span>★</span>Art &amp; design<span>★</span>Mentors
+</div></div>
+
+<section id="why"><div class="wrap why">
+  <div class="rv">
+    <h2>You can't want what you've never seen.</h2>
+    <p>A lot of seniors don't lack talent. They lack a look at what's out there. A career day with a slideshow doesn't fix that.</p>
+    <p style="margin-top:14px">So we skip the slideshow. Our teens pick up the tools, ask the awkward questions and spend real time with people doing the work.</p>
+  </div>
+  <div class="big rv"><img src="../assets/img/hallway.webp" alt="Three students walking through a school hallway" loading="lazy"><div class="hand">that "I could do that" moment</div></div>
+</div></section>
+
+<section id="do" style="padding-top:20px"><div class="wrap">
+  <h2 class="rv">What a year with P.A.T.H. looks like</h2>
+  <div class="acts">
+    <div class="act rv"><span class="tag">MONTHLY</span><img src="../assets/img/mentor.webp" alt="Mentor talking with a teen" loading="lazy"><h3>Mentor talks</h3><p>A steady adult in your corner who answers honestly.</p></div>
+    <div class="act rv"><span class="tag">HANDS-ON</span><img src="../assets/img/trades.webp" alt="Teen learning a trade" loading="lazy"><h3>Job shadows &amp; internships</h3><p>Spend real hours in local businesses and workshops.</p></div>
+    <div class="act rv"><span class="tag">ROAD TRIP</span><img src="../assets/img/campus.webp" alt="Campus visit" loading="lazy"><h3>College visits</h3><p>See the dorms, the classes and the people. Decide for yourself.</p></div>
+    <div class="act rv"><span class="tag">OUT &amp; ABOUT</span><img src="../assets/img/museum.webp" alt="Museum visit" loading="lazy"><h3>Museums &amp; field trips</h3><p>Big ideas, up close, with your crew.</p></div>
+    <div class="act rv"><span class="tag">GIVE BACK</span><img src="../assets/img/service.webp" alt="Community service" loading="lazy"><h3>Service &amp; sports</h3><p>Teamwork and leadership that show on any application.</p></div>
+    <div class="act rv"><span class="tag">LIVE</span><img src="../assets/img/bus.webp" alt="Teens boarding a bus" loading="lazy"><h3>Guest speakers &amp; travel</h3><p>Founders, nurses, welders and designers tell it like it is.</p></div>
+  </div>
+</div></section>
+
+<section class="steps" id="how"><div class="wrap">
+  <h2 class="rv">Our idea in one line: <em>see it, try it, own it, go.</em></h2>
+  <div class="srow">
+    <div class="s rv"><div class="n">1</div><b>Exposure</b><p>Meet careers, trades and paths you didn't know existed.</p></div>
+    <div class="s rv"><div class="n">2</div><b>Curiosity</b><p>Hands-on moments spark the questions that matter.</p></div>
+    <div class="s rv"><div class="n">3</div><b>Motivation</b><p>Confidence shows up once you've seen it's possible.</p></div>
+    <div class="s rv"><div class="n">4</div><b>Purpose</b><p>Real goals and the first intentional steps toward them.</p></div>
+  </div>
+  <div class="rise">
+    <span style="--r:-3deg">college</span><span style="--r:2deg">tech training</span><span style="--r:-1deg">the trades</span><span style="--r:3deg">your own business</span><span style="--r:-2deg">creative work</span><span style="--r:1deg">a job you like</span><span style="--r:-3deg">a lifelong hobby</span>
+  </div>
+</div></section>
+
+<section id="join"><div class="wrap join">
+  <div class="rv">
+    <h2>Be someone's first step.</h2>
+    <p>Mentor a teen, host a shadow day, speak to students, sponsor a trip, or sign up a young person you care about.</p>
+    <p class="hand" style="font-size:30px;margin-top:22px;color:var(--red)">[Meeting location, City, State]<br>[email@yourdomain.org] · [Phone]</p>
+  </div>
+  <div class="card rv">
+    <form action="#" method="post" onsubmit="event.preventDefault();alert('Demo form: will connect to the live form service.')">
+      <input placeholder="Your name" required>
+      <input type="email" placeholder="Email" required>
+      <select><option>I want to…</option><option>Become a mentor</option><option>Enroll a teen</option><option>Offer an internship / job shadow</option><option>Speak to students</option><option>Partner or sponsor</option></select>
+      <textarea rows="4" placeholder="Anything we should know?"></textarea>
+      <button class="btn" type="submit">Send it</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>P.A.T.H. · Preparing Adolescents Through Horizons</span><span>© <script>document.write(new Date().getFullYear())</script></span></div></footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),io.unobserve(x.target))),{threshold:.15});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+'s';io.observe(el)});
+</script>
+</body>
+</html>
