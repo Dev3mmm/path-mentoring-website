@@ -183,5 +183,6 @@ const box=document.getElementById('mapbox'),fg=document.getElementById('fg'),tr=
 function upd(){const r=box.getBoundingClientRect(),h=r.height,p=Math.min(Math.max((innerHeight*.55-r.top)/h,0),1),y=p*(h-46);fg.style.height=(y+23)+'px';tr.style.top=y+'px'}
 addEventListener('scroll',upd,{passive:true});upd();
 </script>
+<script src="../assets/switcher.js" defer></script>
 </body>
 </html>
