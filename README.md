@@ -13,15 +13,16 @@ US-based community mentoring nonprofit. Goal: **zero recurring cost except the d
 
 ## Structure
 ```
-design-a-scrapbook/   Taped-photo collage
-design-b-transit/      Transit-map concept
-design-c-cinematic/    Film-title concept
-design-d-foundation/   Official, institutional (recommended)
-design-e-pathways/     Official, interactive pathway explorer
+design-a-scrapbook/   Playful taped-photo collage
+design-b-meridian/    Cinematic dark design for parents and schools (packages + checkout UI)
+design-c-atlas/       Bright interactive design (Path Finder, package table, checkout drawer)
 index.html            Chooser page for client review
 ```
 After the client picks, the winning design becomes the site root and gets extra pages
 (About, Programs, Events, Get Involved, Donate, Contact, Privacy).
+
+## Payments
+Checkout UIs are demos. For launch, wire the buttons to Stripe Payment Links / PayPal / Givebutter (no backend needed).
 
 ## Placeholders to fill before launch
 - Meeting location, city/state, phone, email
