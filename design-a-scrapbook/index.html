@@ -10,7 +10,7 @@
 <style>
 :root{--kraft:#e9dcc3;--paper:#fbf6ea;--ink:#1d1a16;--red:#e63b2e;--blue:#2457ff;--yellow:#ffd93b;--green:#1f9d6b}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{font:18px/1.6 "Work Sans",sans-serif;color:var(--ink);background:var(--kraft);
 background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1.5px);background-size:14px 14px;overflow-x:hidden}
 .hand{font-family:Caveat,cursive;font-weight:700}
@@ -123,13 +123,50 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
 .faq2 summary{cursor:pointer;font-family:Caprasimo;font-size:22px}
 .faq2 p{margin-top:10px;color:#4b443a}
 @media(max-width:860px){.chal2,.mv2,.safe2,.pw2,.outs2{grid-template-columns:1fr}}
+
+/* --- packages + payment --- */
+.ptabs2{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 40px}
+.ptabs2 button{all:unset;cursor:pointer;font-family:Caprasimo;font-size:20px;padding:10px 24px;background:var(--paper);box-shadow:3px 3px 0 var(--ink);border:2px solid var(--ink);transform:rotate(-1.5deg);transition:.2s}
+.ptabs2 button:nth-child(2){transform:rotate(1.2deg)}.ptabs2 button:nth-child(3){transform:rotate(-.8deg)}
+.ptabs2 button[aria-selected=true]{background:var(--yellow)}
+.pk2{display:none;grid-template-columns:repeat(3,1fr);gap:34px}
+.pk2.on{display:grid}
+.pc2{background:var(--paper);padding:34px 28px 28px;box-shadow:0 12px 26px rgba(0,0,0,.22);position:relative;display:flex;flex-direction:column;transition:.3s}
+.pc2::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:28px;margin-left:-45px;background:rgba(255,217,59,.85);transform:rotate(-3deg);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.pc2:nth-child(1){transform:rotate(-1.4deg)}.pc2:nth-child(2){transform:rotate(.8deg)}.pc2:nth-child(3){transform:rotate(-.6deg)}
+.pc2:hover{transform:rotate(0) scale(1.03);z-index:2}
+.pc2.hot{background:#fff6c9}
+.pc2 .flag2{position:absolute;top:18px;right:-12px;background:var(--red);color:#fff;font-family:Caveat;font-size:22px;padding:2px 16px;transform:rotate(5deg);box-shadow:2px 2px 0 var(--ink)}
+.pc2 h3{font-size:34px;margin-bottom:4px}
+.pc2 .d{font-family:Caveat;font-size:24px;color:var(--red);line-height:1.1;margin-bottom:14px}
+.pc2 ul{list-style:none;padding:0;display:grid;gap:8px;margin:0 0 22px;flex:1;font-size:16px}
+.pc2 li::before{content:"\2713";display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:12px;font-weight:700;margin-right:10px}
+.paybox{margin-top:60px;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.paybox .sum2{background:var(--ink);color:var(--paper);padding:34px;transform:rotate(-.8deg);box-shadow:0 12px 26px rgba(0,0,0,.3)}
+.paybox .sum2 h3{color:var(--yellow);font-size:32px;margin-bottom:16px}
+.paybox .sum2 small{display:block;font-family:Caveat;font-size:22px;color:#bfb7a6;margin-top:12px}
+.paybox .sum2 b{font-family:Caprasimo;font-weight:400;font-size:26px;display:block}
+.paybox .sum2 p{font-size:14px;opacity:.8;margin-top:22px}
+.paybox .meth2{background:var(--paper);padding:34px;transform:rotate(.6deg);box-shadow:0 12px 26px rgba(0,0,0,.2);position:relative}
+.paybox .meth2::before{content:"";position:absolute;top:-14px;left:60px;width:90px;height:28px;background:rgba(255,217,59,.85);transform:rotate(-2deg)}
+.lab2{font-family:Caveat;font-size:26px;color:var(--red);margin:14px 0 6px}
+.chips2{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips2 button{all:unset;cursor:pointer;padding:8px 18px;border:2px solid var(--ink);background:#fff;font-weight:600;font-size:15px;transition:.2s}
+.chips2 button[aria-pressed=true]{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+.mm2{display:flex;align-items:center;gap:14px;padding:12px 16px;border:2px solid var(--ink);background:#fff;margin-bottom:8px;cursor:pointer;font-weight:600;font-size:15.5px}
+.mm2:has(input:checked){background:var(--yellow)}
+.mm2 input{accent-color:#1d1a16;width:18px;height:18px;margin:0}
+.mm2 small{margin-left:auto;color:#6b6354;font-weight:500;font-size:13px}
+.paybox .meth2 .btn{margin-top:14px}
+.paybox .fine2{font-size:13px;color:#6b6354;margin-top:12px}
+@media(max-width:860px){.pk2,.paybox{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav>
   <a class="logo" href="#"><i>↗</i>P.A.T.H.</a>
-  <ul><li><a href="#why">Why</a></li><li><a href="#do">What we do</a></li><li><a href="#how">How it works</a></li><li><a href="#pathways">Pathways</a></li><li><a class="btn" href="#join">Join in</a></li></ul>
+  <ul><li><a href="#why">Why</a></li><li><a href="#do">What we do</a></li><li><a href="#how">How it works</a></li><li><a href="#pathways">Pathways</a></li><li><a href="#packages">Packages</a></li><li><a class="btn" href="#join">Join in</a></li></ul>
 </nav>
 <header class="hero">
   <div>
@@ -147,9 +184,9 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
 </header>
 </div>
 
-<div class="tape"><div>
+<div style="overflow:hidden;padding:18px 0"><div class="tape"><div>
 <span>★</span>Careers<span>★</span>Skilled trades<span>★</span>College<span>★</span>Startups<span>★</span>Art &amp; design<span>★</span>Mentors<span>★</span>Careers<span>★</span>Skilled trades<span>★</span>College<span>★</span>Startups<span>★</span>Art &amp; design<span>★</span>Mentors
-</div></div>
+</div></div></div>
 
 <section id="why"><div class="wrap why">
   <div class="rv">
@@ -213,6 +250,32 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
   <ul class="rv"><li><b>Screened mentors</b><span>Background checks and references for every adult working with students.</span></li><li><b>Two-adult rule</b><span>No mentor is alone with a student during program activities.</span></li><li><b>Parent consent &amp; communication</b><span>Permission for trips and internships; schedules shared in advance.</span></li><li><b>Photo &amp; privacy care</b><span>No student photos or details shared without written consent.</span></li></ul>
 </div></section>
 
+
+<section class="sec2" id="packages"><div class="wrap">
+  <h2 class="rv">Pick your <span class="hl">package.</span></h2>
+  <p class="rv" style="max-width:640px;font-size:19px">Programs for families, partnerships for schools, and ways for sponsors to open doors for young people.</p>
+  <div class="ptabs2" role="tablist" id="ptabs2"><button role="tab" aria-selected="true" data-k="fam">Families</button><button role="tab" aria-selected="false" data-k="sch">Schools</button><button role="tab" aria-selected="false" data-k="spo">Sponsors</button></div>
+  <div class="pk2 on" id="pk2-fam"><div class="pc2"><h3>Explorer</h3><div class="d">a first look at what's out there</div><ul><li>Mentor &amp; mentee talk sessions</li><li>Guest speaker events</li><li>Community service events</li></ul><button class="btn y pick2" data-pkg="Explorer" data-grp="Family">Choose Explorer</button></div><div class="pc2 hot"><span class="flag2">most popular!</span><h3>Pathfinder</h3><div class="d">Explorer plus real places</div><ul><li>Everything in Explorer</li><li>College visits</li><li>Museum visits</li><li>Sporting events</li></ul><button class="btn pick2" data-pkg="Pathfinder" data-grp="Family">Choose Pathfinder</button></div><div class="pc2"><h3>Trailblazer</h3><div class="d">the full experience</div><ul><li>Everything in Pathfinder</li><li>Traveling trips</li><li>Internships &amp; job shadows</li><li>Mentorships with professionals</li></ul><button class="btn y pick2" data-pkg="Trailblazer" data-grp="Family">Choose Trailblazer</button></div></div>
+  <div class="pk2" id="pk2-sch"><div class="pc2"><h3>Spotlight</h3><div class="d">a focused day of exposure</div><ul><li>Guest speaker visit</li><li>Career exploration session</li><li>Student Q&amp;A with professionals</li></ul><button class="btn y pick2" data-pkg="Spotlight" data-grp="School">Choose Spotlight</button></div><div class="pc2 hot"><span class="flag2">recommended</span><h3>Partner</h3><div class="d">a program across the term</div><ul><li>Everything in Spotlight</li><li>College visit day</li><li>Mentor network for students</li><li>Family communication</li></ul><button class="btn pick2" data-pkg="Partner" data-grp="School">Choose Partner</button></div><div class="pc2"><h3>Anchor</h3><div class="d">a full year of exploring</div><ul><li>Everything in Partner</li><li>Internships &amp; job shadows</li><li>Trips and museum visits</li><li>End-of-year review with staff</li></ul><button class="btn y pick2" data-pkg="Anchor" data-grp="School">Choose Anchor</button></div></div>
+  <div class="pk2" id="pk2-spo"><div class="pc2"><h3>Supporter</h3><div class="d">help a student take step one</div><ul><li>Sponsor activity costs for students</li><li>Updates on what your gift made possible</li></ul><button class="btn y pick2" data-pkg="Supporter" data-grp="Sponsor">Choose Supporter</button></div><div class="pc2 hot"><span class="flag2">community pick</span><h3>Champion</h3><div class="d">open doors for a group</div><ul><li>Sponsor a trip or college visit</li><li>Recognition at program events</li><li>Thank-you from students</li></ul><button class="btn pick2" data-pkg="Champion" data-grp="Sponsor">Choose Champion</button></div><div class="pc2"><h3>Visionary</h3><div class="d">back a whole year</div><ul><li>Sponsor a full pathway program</li><li>Featured partner recognition</li><li>Meet the students you support</li></ul><button class="btn y pick2" data-pkg="Visionary" data-grp="Sponsor">Choose Visionary</button></div></div>
+  <div class="paybox" id="pay2">
+    <div class="sum2"><h3>Your order</h3><small>package</small><b id="s2pk">Pathfinder</b><small>for</small><b id="s2gp">Family</b><small>payment type</small><b id="s2fq">One-time</b><small>amount</small><b id="s2am">Confirmed at enrollment</b><p>&#128274; Card details are entered with our payment provider, never on this site.</p></div>
+    <div class="meth2">
+      <h3 style="font-size:32px">How would you like to pay?</h3>
+      <div class="lab2">payment type</div><div class="chips2" id="f2"><button aria-pressed="true">One-time</button><button aria-pressed="false">Monthly</button><button aria-pressed="false">Per term</button></div>
+      <div class="lab2">amount (sponsors and donations)</div><div class="chips2" id="a2"><button aria-pressed="false">$25</button><button aria-pressed="false">$50</button><button aria-pressed="false">$100</button><button aria-pressed="false">$250</button><button aria-pressed="false">Other</button></div>
+      <div class="lab2">payment method</div>
+      <label class="mm2"><input type="radio" name="pm2" checked><span>Credit or debit card</span><small>Visa, Mastercard, Amex</small></label>
+      <label class="mm2"><input type="radio" name="pm2"><span>Apple Pay or Google Pay</span><small>One tap</small></label>
+      <label class="mm2"><input type="radio" name="pm2"><span>PayPal</span><small></small></label>
+      <label class="mm2"><input type="radio" name="pm2"><span>Bank transfer (ACH)</span><small>Lower fees</small></label>
+      <label class="mm2"><input type="radio" name="pm2"><span>Check by mail</span><small></small></label>
+      <button class="btn" id="pay2btn">Continue to secure payment</button>
+      <p class="fine2">Demo: this button will open the secure payment page (Stripe, PayPal or your chosen provider).</p>
+    </div>
+  </div>
+</div></section>
+
 <section class="sec2" id="faq"><div class="wrap" style="max-width:860px"><h2 class="rv">Questions, answered.</h2><div class="faq2 rv" style="margin-top:26px"><details><summary>Who can join P.A.T.H.?</summary><p>Young people in high school, grades 9 through 12.</p></details><details><summary>Does it cost anything for a student to take part?</summary><p>Please contact us and we'll walk you through how participation works and any costs involved.</p></details><details><summary>Where and when do activities take place?</summary><p>Activities take place in and around our community, with a regular meeting place shared with families in advance. Schedules are always sent out ahead of time.</p></details><details><summary>I'm a professional or business owner. How can I help?</summary><p>Host a job shadow or internship, speak to students, or become a mentor. Use the contact form below.</p></details></div></div></section>
 
 <section id="join"><div class="wrap join">
@@ -236,6 +299,16 @@ footer{background:var(--ink);color:#bdb4a2;padding:44px 0;font-size:15px}
 <script>
 const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),io.unobserve(x.target))),{threshold:.15});
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+'s';io.observe(el)});
+
+/* packages + checkout */
+(function(){
+  var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
+  $$('#ptabs2 button').forEach(function(b){b.onclick=function(){$$('#ptabs2 button').forEach(function(x){x.setAttribute('aria-selected',x===b)});['fam','sch','spo'].forEach(function(k){$('#pk2-'+k).classList.toggle('on',k===b.dataset.k)})}});
+  $$('.pick2').forEach(function(b){b.addEventListener('click',function(){$('#s2pk').textContent=b.dataset.pkg;$('#s2gp').textContent=b.dataset.grp;$('#pay2').scrollIntoView({behavior:'smooth',block:'center'})})});
+  function pr(sel,fn){$$(sel+' button').forEach(function(b){b.addEventListener('click',function(){$$(sel+' button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});fn(b)})})}
+  pr('#f2',function(b){$('#s2fq').textContent=b.textContent});pr('#a2',function(b){$('#s2am').textContent=b.textContent==='Other'?'Custom amount':b.textContent});
+  $('#pay2btn').onclick=function(){alert('Demo: this will open the secure payment page (Stripe, PayPal or your chosen provider) for the selected package and payment method.')};
+})();
 </script>
 <script src="../assets/switcher.js" defer></script>
 </body>

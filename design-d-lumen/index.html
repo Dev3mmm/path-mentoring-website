@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P.A.T.H. | Preparing Adolescents Through Horizons</title>
+<meta name="description" content="P.A.T.H. is a community mentoring organization that lets teens visit their possible futures first, through real experiences with careers, trades, colleges and mentors. For families, schools and sponsors.">
+<meta property="og:title" content="P.A.T.H. | The future is a place you can visit first">
+<meta name="theme-color" content="#f5f0e6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#f5f0e6;--paper:#fbf8f1;--navy:#101c33;--navy2:#0a1325;--copper:#b8643a;--sage:#6f8f7f;--mut:#58627a;--line:rgba(16,28,51,.16)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font:17px/1.7 "Hanken Grotesk",system-ui,sans-serif;color:var(--navy);background:var(--ivory);overflow-x:hidden}
+.f{font-family:Fraunces,Georgia,serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:300;letter-spacing:-.025em;line-height:1.02}
+em{font-style:italic;color:var(--copper)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 28px}
+:focus-visible{outline:2px solid var(--copper);outline-offset:4px}
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:16px 32px;background:linear-gradient(var(--ivory),rgba(245,240,230,0));transition:.3s}
+.bar.s{background:rgba(245,240,230,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 32px}
+.brand{display:flex;gap:12px;align-items:center;text-decoration:none}
+.brand svg{width:36px;height:36px}
+.brand b{font:400 24px Fraunces,serif;letter-spacing:.06em;display:block;line-height:1}
+.brand small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:var(--ivory)!important;padding:15px 30px;font-weight:600;font-size:14.5px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:1px solid var(--navy);cursor:pointer;font-family:inherit;transition:.35s;position:relative;overflow:hidden}
+.btn::after{content:"→";transition:transform .35s}
+.btn:hover{background:var(--copper);border-color:var(--copper)}
+.btn:hover::after{transform:translateX(5px)}
+.btn.o{background:transparent;color:var(--navy)!important}
+.btn.o:hover{background:var(--navy);color:var(--ivory)!important;border-color:var(--navy)}
+.bar .btn{padding:11px 22px;font-size:12.5px}
+/* side index */
+.idx{position:fixed;left:26px;top:50%;transform:translateY(-50%);z-index:70;display:none;flex-direction:column;gap:14px}
+.idx a{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);font-weight:600;opacity:.55;transition:.3s}
+.idx a i{font:italic 400 15px Fraunces,serif;letter-spacing:0;width:22px}
+.idx a span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .4s}
+.idx a.on{opacity:1;color:var(--copper)}.idx a:hover span,.idx a.on span{max-width:120px}
+@media(min-width:1280px){.idx{display:flex}}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:40px;padding:120px max(28px,calc((100vw - 1180px)/2)) 60px;position:relative}
+.meta{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--mut);padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:34px;max-width:620px}
+.meta span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--copper);margin-right:10px;vertical-align:middle}
+.hero h1{font-size:clamp(46px,min(7.4vw,12vh),112px);font-weight:300;line-height:.98}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.1em}
+.hero h1 .l>span{display:block;transform:translateY(105%);animation:up 1.2s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.14s + .2s)}
+@keyframes up{to{transform:none}}
+.hero p.l2{font-size:20px;color:#3b4660;max-width:540px;margin:30px 0 34px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.arch{position:relative;aspect-ratio:3/4.1;max-height:78vh;margin-left:auto;width:100%;max-width:520px;border-radius:260px 260px 6px 6px;overflow:hidden;box-shadow:0 50px 100px -40px rgba(16,28,51,.55);clip-path:inset(100% 0 0 0 round 260px 260px 6px 6px);animation:reveal 1.6s .3s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes reveal{to{clip-path:inset(0 0 0 0 round 260px 260px 6px 6px)}}
+.arch img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover;will-change:transform}
+.seal{position:absolute;left:-46px;bottom:56px;width:118px;height:118px;border-radius:50%;background:var(--copper);color:#fff;display:grid;place-items:center;text-align:center;font:italic 400 17px/1.1 Fraunces,serif;padding:14px;box-shadow:0 20px 40px -14px rgba(184,100,58,.6);animation:spin 24s linear infinite;z-index:3}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal span{animation:spin 24s linear infinite reverse}
+/* sections */
+section{padding:130px 0;position:relative}
+.sn{display:flex;align-items:center;gap:16px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--copper);margin-bottom:26px}
+.sn i{font:italic 400 22px Fraunces,serif;letter-spacing:0;color:var(--navy)}
+.sn::after{content:"";height:1px;width:80px;background:var(--copper);transform-origin:left;transform:scaleX(0);transition:transform 1.2s .3s cubic-bezier(.2,.7,.2,1)}
+.in .sn::after,.sn.in::after{transform:scaleX(1)}
+h2{font-size:clamp(38px,5.6vw,84px);margin-bottom:26px}
+.lead{font-size:20px;color:var(--mut);max-width:620px}
+.rv{opacity:0;translate:0 34px;transition:opacity 1s,translate 1s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;translate:0}
+.rule{height:1px;background:var(--line);transform-origin:left;transform:scaleX(0);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}.rule.in{transform:scaleX(1)}
+/* challenge */
+.chal{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.pull{font:italic 300 clamp(34px,4.4vw,64px)/1.08 Fraunces,serif;letter-spacing:-.02em;position:sticky;top:120px}
+.pull::before{content:"“";display:block;font-size:1.5em;line-height:.6;color:var(--copper);margin-bottom:10px}
+.chal p{font-size:19.5px;color:#34405a;margin-bottom:22px}
+.chal p:first-of-type::first-letter{font:300 5.2em/.8 Fraunces,serif;float:left;padding:8px 14px 0 0;color:var(--copper)}
+.chal figure{margin-top:36px;aspect-ratio:4/3;overflow:hidden}
+.chal figure img{width:100%;height:100%;object-fit:cover;display:block}
+/* approach */
+.chap{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:56px}
+.ch{padding:34px 28px 40px 0;border-right:1px solid var(--line);padding-left:28px}
+.ch:first-child{padding-left:0}.ch:last-child{border-right:0}
+.ch .n{font:italic 300 96px/.9 Fraunces,serif;color:var(--copper);margin-bottom:20px;transition:.5s}
+.ch:hover .n{transform:translateX(8px)}
+.ch h3{font-size:34px;margin-bottom:10px}
+.ch p{font-size:16px;color:var(--mut)}
+.olist{display:grid;grid-template-columns:1fr 1fr;column-gap:70px;margin-top:70px;counter-reset:o}
+.olist h3{grid-column:1/-1;font-size:clamp(28px,3.2vw,44px);margin-bottom:26px}
+.olist div{counter-increment:o;display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--line);font-size:18px;align-items:baseline}
+.olist div::before{content:counter(o,decimal-leading-zero);font:italic 400 24px Fraunces,serif;color:var(--copper);min-width:36px}
+.toc{margin-top:70px;background:var(--navy);color:#dfe6f4;padding:70px;display:grid;grid-template-columns:220px 1fr;gap:50px;position:relative;overflow:hidden}
+.toc::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(184,100,58,.45),transparent 70%)}
+.toc h3{font:italic 400 36px/1.1 Fraunces,serif;color:#f1c9ae}
+.toc p{font:300 24px/1.55 Fraunces,serif;position:relative}
+/* programme */
+.prog{border-top:1px solid var(--line);margin-top:50px}
+.row{display:grid;grid-template-columns:70px 1.2fr 2fr 40px;gap:20px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);cursor:default;transition:.4s;position:relative}
+.row .no{font:italic 400 24px Fraunces,serif;color:var(--copper)}
+.row h3{font-size:clamp(26px,3vw,42px);transition:.4s}
+.row p{color:var(--mut);font-size:16.5px}
+.row .ar{font-size:26px;transition:.4s;color:var(--copper)}
+.row:hover{padding-left:20px;background:var(--paper)}
+.row:hover h3{font-style:italic}
+.row:hover .ar{transform:translateX(8px)}
+.row img.th{display:none;width:100%;aspect-ratio:16/9;object-fit:cover;grid-column:1/-1}
+.float{position:fixed;width:300px;aspect-ratio:4/3;pointer-events:none;z-index:60;opacity:0;transform:translate(-50%,-50%) scale(.85) rotate(-3deg);transition:opacity .3s,transform .4s;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.float.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+.float img{width:100%;height:100%;object-fit:cover;display:block}
+/* pathways */
+.pw{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:50px;align-items:center}
+.pwl button{all:unset;cursor:pointer;display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font:300 clamp(30px,3.8vw,54px)/1.05 Fraunces,serif;letter-spacing:-.025em;color:rgba(16,28,51,.35);transition:.4s;position:relative}
+.pwl button:hover{color:var(--navy)}
+.pwl button[aria-selected=true]{color:var(--navy);padding-left:26px;font-style:italic}
+.pwl button[aria-selected=true]::before{content:"";position:absolute;left:0;top:50%;width:14px;height:2px;background:var(--copper)}
+.pwr{position:relative;aspect-ratio:4/4.4;overflow:hidden;box-shadow:0 40px 80px -40px rgba(16,28,51,.5)}
+.pwr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .9s,transform 1.6s}
+.pwr img.on{opacity:1;transform:scale(1)}
+.pwr::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(10,19,37,.88))}
+.pwr .cap{position:absolute;left:30px;right:30px;bottom:26px;z-index:2;color:#fff}
+.pwr .cap p{font-size:17px;color:#e6ecf8;max-width:420px}
+/* schools + families */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:50px}
+.duo>div{padding:60px 54px}
+.duo .a{background:var(--navy);color:#dfe6f4}.duo .b{background:var(--copper);color:#fff}
+.duo h3{font-size:clamp(32px,3.6vw,52px);margin-bottom:16px;color:inherit}
+.duo .a h3{color:#fff}
+.duo p.d{font-size:17.5px;opacity:.88;margin-bottom:26px}
+.duo ol{list-style:none;padding:0;counter-reset:d}
+.duo li{counter-increment:d;display:flex;gap:18px;padding:16px 0;border-top:1px solid rgba(255,255,255,.25)}
+.duo li::before{content:counter(d,decimal-leading-zero);font:italic 400 20px Fraunces,serif;opacity:.8;min-width:30px}
+.duo li b{display:block}.duo li span{opacity:.82;font-size:15px}
+.duo .btn{margin-top:28px;background:var(--ivory);color:var(--navy)!important;border-color:var(--ivory)}
+.duo .btn:hover{background:var(--navy);color:#fff!important;border-color:var(--navy)}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.photos img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+/* packages */
+.tabs{display:flex;gap:34px;border-bottom:1px solid var(--line);margin:40px 0 0;overflow-x:auto;scrollbar-width:none}
+.tabs button{all:unset;cursor:pointer;white-space:nowrap;padding:16px 0;font:300 28px Fraunces,serif;color:rgba(16,28,51,.4);position:relative;transition:.3s}
+.tabs button[aria-selected=true]{color:var(--navy);font-style:italic}
+.tabs button[aria-selected=true]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--copper)}
+.pk{display:none;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.pk.on{display:grid;animation:fin .6s}
+@keyframes fin{from{opacity:0;translate:0 14px}}
+.pkc{padding:46px 38px 46px 0;border-right:1px solid var(--line);padding-left:38px;display:flex;flex-direction:column;position:relative;transition:.4s}
+.pkc:first-child{padding-left:0}.pkc:last-child{border-right:0}
+.pkc.hot{background:var(--paper)}
+.pkc:hover{background:var(--paper)}
+.pkc .tag{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--copper);height:22px}
+.pkc h3{font-size:46px;margin:6px 0 8px}
+.pkc .d{color:var(--mut);margin-bottom:22px}
+.pkc ul{list-style:none;padding:0;margin-bottom:30px;flex:1}
+.pkc li{padding:11px 0;border-top:1px solid var(--line);font-size:16px;display:flex;gap:12px}
+.pkc li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--copper);margin-top:10px;flex:none}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(10,19,37,.6);backdrop-filter:blur(6px);z-index:200;display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:.4s}
+.ov.on{opacity:1;pointer-events:auto}
+.md{width:min(960px,100%);max-height:94vh;overflow:auto;background:var(--paper);display:grid;grid-template-columns:.8fr 1.2fr;transform:translateY(30px) scale(.98);transition:.5s cubic-bezier(.2,.8,.2,1);position:relative}
+.ov.on .md{transform:none}
+.md .ls{background:var(--navy);color:#dfe6f4;padding:44px 36px;display:flex;flex-direction:column}
+.md .ls h3{font:italic 400 36px/1.05 Fraunces,serif;color:#f1c9ae;margin:8px 0 18px}
+.md .ls .k{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#c9d3e8}
+.md .ls .v{font:300 28px Fraunces,serif;color:#fff;margin-bottom:22px}
+.md .rs{padding:44px 40px}
+.md .x{all:unset;cursor:pointer;position:absolute;top:14px;right:18px;font-size:30px;line-height:1;z-index:3;color:var(--navy)}
+.steps{display:flex;gap:8px;margin-bottom:28px}
+.steps i{flex:1;height:3px;background:var(--line);position:relative;overflow:hidden}
+.steps i::after{content:"";position:absolute;inset:0;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform .6s}
+.steps i.on::after{transform:scaleX(1)}
+.stp{display:none}.stp.on{display:block;animation:fin .5s}
+.stp h4{font:300 34px Fraunces,serif;margin-bottom:6px;letter-spacing:-.02em}
+.stp p.h{color:var(--mut);margin-bottom:20px;font-size:15.5px}
+.md input[type=text],.md input[type=email]{width:100%;padding:15px 16px;border:1px solid var(--line);background:#fff;font:inherit;margin-bottom:10px}
+.md input:focus{outline:2px solid var(--copper);border-color:transparent}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chips button{all:unset;cursor:pointer;padding:10px 18px;border:1px solid var(--line);font-weight:600;font-size:14.5px;background:#fff;transition:.25s}
+.chips button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.mm{display:flex;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--line);background:#fff;margin-bottom:8px;cursor:pointer;font-weight:600;font-size:15.5px;transition:.25s}
+.mm:has(input:checked){border-color:var(--copper);background:#fdf3ec}
+.mm input{accent-color:#b8643a;width:18px;height:18px;margin:0}
+.mm small{margin-left:auto;color:var(--mut);font-weight:500;font-size:13px}
+.nav2{display:flex;justify-content:space-between;gap:12px;margin-top:20px}
+.nav2 .btn{padding:13px 26px}
+.sm{background:#fff;border:1px solid var(--line);padding:18px 20px;font-size:15.5px;margin-bottom:10px;display:flex;justify-content:space-between;gap:14px}
+.sm b{font-weight:600}.sm span{color:var(--mut);text-align:right}
+.fine{font-size:13px;color:var(--mut);margin-top:12px}
+/* faq contact */
+details{border-top:1px solid var(--line);padding:26px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:300 clamp(24px,2.6vw,34px) Fraunces,serif;letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";font:200 38px/1 Fraunces,serif;color:var(--copper);transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;color:var(--mut);max-width:680px}
+.contact{background:var(--navy);color:#dfe6f4}
+.contact h2{color:#fff}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact dl{display:grid;gap:18px;margin-top:34px}
+.contact dt{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#e8b18d}
+form.cf{display:grid;gap:12px}
+form.cf input[type=text],form.cf input[type=email],form.cf select,form.cf textarea{width:100%;padding:16px;border:0;border-bottom:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#fff;font:inherit}
+form.cf select option{color:#000}
+form.cf ::placeholder{color:#93a1bf}
+form.cf input:focus,form.cf select:focus,form.cf textarea:focus{outline:0;border-bottom-color:var(--copper);background:rgba(255,255,255,.12)}
+.contact .btn{background:var(--copper);border-color:var(--copper)}.contact .btn:hover{background:#fff;color:var(--navy)!important}
+footer{padding:36px 0 96px;font-size:14px;color:#8d99b3;background:var(--navy2)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:980px){.hero,.chal,.pw,.duo,.cg,.toc,.md{grid-template-columns:1fr}.hero{padding-top:110px}.arch{max-width:420px;margin:0 auto;max-height:none}.seal{left:-10px}.chap{grid-template-columns:1fr 1fr}.ch:nth-child(2){border-right:0}.ch{padding-left:0!important;border-bottom:1px solid var(--line)}.olist{grid-template-columns:1fr}.pull{position:relative;top:0}.row{grid-template-columns:44px 1fr 30px}.row p{grid-column:2/3}.row img.th{display:block;grid-column:1/-1}.pk{grid-template-columns:1fr}.pkc{border-right:0;padding-left:0!important;border-bottom:1px solid var(--line)}.duo>div{padding:40px 28px}.toc{padding:40px 28px}section{padding:84px 0}.photos{grid-template-columns:1fr}.md .ls{padding:30px 28px}.md .rs{padding:30px 24px}.float{display:none}.bar{padding:12px 18px}.brand small{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;translate:0}.hero h1 .l>span{transform:none}.arch{clip-path:none}.rule{transform:none}.sn::after{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="mk" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#101c33"/><path d="M12 30a12 12 0 0 1 24 0z" fill="#b8643a"/><path d="M22.5 30 17.500 44h13L25.500 30z" fill="#f5f0e6"/></symbol></svg>
+
+<header class="bar" id="bar">
+  <a class="brand" href="#"><svg><use href="#mk"/></svg><span><b>P.A.T.H.</b><small>Preparing Adolescents Through Horizons</small></span></a>
+  <a class="btn" href="#contact">Get in touch</a>
+</header>
+<nav class="idx" id="idx" aria-label="Sections">
+  <a href="#challenge"><i>01</i><span>Challenge</span></a><a href="#approach"><i>02</i><span>Approach</span></a><a href="#programme"><i>03</i><span>Programme</span></a><a href="#pathways"><i>04</i><span>Pathways</span></a><a href="#partners"><i>05</i><span>Partners</span></a><a href="#packages"><i>06</i><span>Packages</span></a><a href="#faq"><i>07</i><span>Questions</span></a><a href="#contact"><i>08</i><span>Contact</span></a>
+</nav>
+<div class="float" id="float"><img alt="" src="../assets/img/roundtable.webp"></div>
+
+<main>
+<header class="hero" id="top">
+  <div>
+    <div class="meta"><span>Community mentoring</span><span>Grades 9 to 12</span><span>Families &amp; schools</span></div>
+    <h1 aria-label="The future is a place you can visit first."><span class="l"><span style="--i:0">The future is</span></span><span class="l"><span style="--i:1">a place you can</span></span><span class="l"><span style="--i:2"><em>visit first.</em></span></span></h1>
+    <p class="l2">P.A.T.H. empowers young people to discover their interests, explore new opportunities and develop a sense of purpose through real-world experiences, so they can confidently choose a path toward a fulfilling future.</p>
+    <div class="cta"><a class="btn" href="#packages">View packages</a><a class="btn o" href="#partners">For schools &amp; families</a></div>
+  </div>
+  <div style="position:relative">
+    <div class="arch"><img id="heroimg" src="../assets/img/graduate.webp" alt="A smiling graduate with her family" fetchpriority="high"></div>
+    <div class="seal"><span>Mentorship<br>Exposure<br>Purpose</span></div>
+  </div>
+</header>
+
+<section id="challenge"><div class="wrap">
+  <div class="sn rv"><i>01</i>The challenge</div>
+  <div class="chal">
+    <div class="pull rv">Young people cannot pursue opportunities they do not know exist.</div>
+    <div class="rv">
+      <p>Some adolescents approach high school graduation with uncertainty about their future, not because they lack ability or potential, but because they may not have had enough opportunities to discover their interests or experience different possibilities firsthand.</p>
+      <p>Traditional career conversations may introduce students to occupations, but P.A.T.H. seeks to move beyond simply telling young people what is available by allowing them to experience, explore, ask questions, connect with mentors, and discover possibilities for themselves.</p>
+      <figure><img src="../assets/img/parent.webp" alt="A parent and teen looking at a laptop together" loading="lazy"></figure>
+    </div>
+  </div>
+</div></section>
+
+<section id="approach" style="padding-top:20px"><div class="wrap">
+  <div class="sn rv"><i>02</i>Our approach</div>
+  <h2 class="rv" style="max-width:960px">Exposure creates possibility. <em>Exploration</em> sparks curiosity.</h2>
+  <p class="lead rv">P.A.T.H. believes that exposure creates possibility, exploration sparks curiosity, and meaningful experiences can inspire purpose.</p>
+  <div class="chap">
+    <div class="ch rv"><div class="n">I</div><h3>Exposure</h3><p>Careers, industries, hobbies, trades, education and mentors.</p></div>
+    <div class="ch rv"><div class="n">II</div><h3>Curiosity</h3><p>Hands-on activities spark questions and reveal interests.</p></div>
+    <div class="ch rv"><div class="n">III</div><h3>Motivation</h3><p>Confidence grows as possibilities become real.</p></div>
+    <div class="ch rv"><div class="n">IV</div><h3>Purpose</h3><p>Meaningful goals and intentional next steps.</p></div>
+  </div>
+  <div class="olist">
+    <h3 class="rv">When adolescents are intentionally exposed to this breadth, they are more likely to:</h3>
+    <div class="rv">Discover new interests and talents.</div>
+    <div class="rv">Develop confidence in their ability to pursue those opportunities.</div>
+    <div class="rv">Recognize their individual strengths.</div>
+    <div class="rv">Establish meaningful personal, educational, and career goals.</div>
+    <div class="rv">Understand the variety of pathways available after high school.</div>
+    <div class="rv">Take intentional steps toward building the future they want.</div>
+  </div>
+  <div class="toc rv"><h3>Our theory of change</h3><p>If P.A.T.H. provides adolescents with meaningful exposure to diverse careers, hobbies, educational pathways, skilled trades, entrepreneurship, mentorship, and real-world experiences, then young people will have greater opportunities to discover their interests, identify their strengths, expand their understanding of what is possible, and develop confidence in their abilities. As a result, they will be better equipped to establish meaningful goals, make informed decisions, and pursue purposeful pathways beyond high school.</p></div>
+</div></section>
+
+<section id="programme" style="padding-top:30px"><div class="wrap">
+  <div class="sn rv"><i>03</i>The programme</div>
+  <h2 class="rv">Eight ways to <em>experience</em> what's next.</h2>
+  <div class="prog" id="prog">
+    <div class="row rv" data-img="roundtable"><span class="no">i</span><h3>Mentor &amp; mentee talks</h3><p>Steady time with a caring adult who listens, guides and shares what they have learned.</p><span class="ar">→</span><img class="th" src="../assets/img/roundtable.webp" alt="" loading="lazy"></div>
+    <div class="row rv" data-img="speaker"><span class="no">ii</span><h3>Guest speakers</h3><p>Professionals from many fields share how they got where they are.</p><span class="ar">→</span><img class="th" src="../assets/img/speaker.webp" alt="" loading="lazy"></div>
+    <div class="row rv" data-img="museum"><span class="no">iii</span><h3>Museum visits</h3><p>Science, art and history experienced up close.</p><span class="ar">→</span><img class="th" src="../assets/img/museum.webp" alt="" loading="lazy"></div>
+    <div class="row rv" data-img="bus"><span class="no">iv</span><h3>Traveling trips</h3><p>Journeys that widen a student's view of the world.</p><span class="ar">→</span><img class="th" src="../assets/img/bus.webp" alt="" loading="lazy"></div>
+    <div class="row rv" data-img="campus"><span class="no">v</span><h3>College visits</h3><p>Tour campuses, meet students and picture the next step.</p><span class="ar">→</span><img class="th" src="../assets/img/campus.webp" alt="" loading="lazy"></div>
+    <div class="row rv" data-img="nurse"><span class="no">vi</span><h3>Internships &amp; mentorships</h3><p>Time inside businesses and with professionals in many fields.</p><span class="ar">→</span><img class="th" src="../assets/img/nurse.webp" alt="" loading="lazy"></div>
+    <div class="row rv" data-img="sports"><span class="no">vii</span><h3>Sporting events</h3><p>Teamwork, discipline and healthy competition.</p><span class="ar">→</span><img class="th" src="../assets/img/sports.webp" alt="" loading="lazy"></div>
+    <div class="row rv" data-img="service"><span class="no">viii</span><h3>Community service events</h3><p>Leadership and character built by giving back.</p><span class="ar">→</span><img class="th" src="../assets/img/service.webp" alt="" loading="lazy"></div>
+  </div>
+</div></section>
+
+<section id="pathways" style="padding-top:30px"><div class="wrap">
+  <div class="sn rv"><i>04</i>Pathways</div>
+  <h2 class="rv">Every path is a <em>good</em> path.</h2>
+  <p class="lead rv">We help every young person find a path that inspires them, whether that leads to college, technical training, entrepreneurship, a skilled trade, employment, creative pursuits, or a meaningful lifelong hobby.</p>
+  <div class="pw">
+    <div class="pwl" role="tablist" id="pwl">
+      <button role="tab" aria-selected="true">College</button><button role="tab" aria-selected="false">Technical training &amp; trades</button><button role="tab" aria-selected="false">Entrepreneurship</button><button role="tab" aria-selected="false">Creative pursuits</button><button role="tab" aria-selected="false">Employment</button><button role="tab" aria-selected="false">Lifelong hobbies</button>
+    </div>
+    <div class="pwr" id="pwr">
+      <img class="on" src="../assets/img/campus.webp" alt="College campus visit">
+      <img src="../assets/img/trades.webp" alt="A teen learning a trade" loading="lazy">
+      <img src="../assets/img/biz.webp" alt="A teen working with a business owner" loading="lazy">
+      <img src="../assets/img/art.webp" alt="A teen painting with an artist" loading="lazy">
+      <img src="../assets/img/office.webp" alt="A teen with a professional at work" loading="lazy">
+      <img src="../assets/img/robotics.webp" alt="Teens building a robot" loading="lazy">
+      <div class="cap"><p id="pwcap">Campus visits, student conversations and mentors who share their own journeys.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="partners" style="padding:30px 0 0"><div class="wrap"><div class="sn rv"><i>05</i>Schools, families &amp; partners</div><h2 class="rv" style="max-width:900px">Built for the people who <em>guide</em> young people.</h2></div>
+  <div class="duo wrap" style="padding:0 28px;gap:0">
+    <div class="a rv"><h3>For schools &amp; counselors</h3><p class="d">Give your students exposure a classroom alone cannot. We bring professionals, campuses and workplaces to them.</p>
+      <ol><li><div><b>Guest speakers in your classrooms</b><span>Professionals from many fields speaking directly with students.</span></div></li><li><div><b>College and workplace visits</b><span>Organized trips into real environments.</span></div></li><li><div><b>A mentor network for your students</b><span>Caring adults and local professionals ready to guide.</span></div></li><li><div><b>Internship and job-shadow connections</b><span>Local businesses and professionals.</span></div></li></ol>
+      <a class="btn" href="#contact" data-role="school">Request a partnership</a></div>
+    <div class="b rv"><h3>For parents &amp; guardians</h3><p class="d">Your teen's safety comes first. These commitments are built into every program.</p>
+      <ol><li><div><b>Screened mentors</b><span>Background checks and references for every adult working with students.</span></div></li><li><div><b>Two-adult rule</b><span>No mentor is alone with a student during program activities.</span></div></li><li><div><b>Consent and communication</b><span>Permission for trips and internships, with schedules shared in advance.</span></div></li><li><div><b>Photo and privacy care</b><span>No student photos or details shared without written consent.</span></div></li></ol>
+      <a class="btn" href="#packages">See family packages</a></div>
+  </div>
+  <div class="photos wrap" style="padding:0 28px"><img src="../assets/img/classroom.webp" alt="Students engaged with a visiting professional" loading="lazy"><img src="../assets/img/counselor.webp" alt="A counselor meeting with a student and her father" loading="lazy"></div>
+</section>
+
+<section id="packages"><div class="wrap">
+  <div class="sn rv"><i>06</i>Packages</div>
+  <h2 class="rv">Choose how you'd like to <em>take part.</em></h2>
+  <p class="lead rv">Programs for families, partnerships for schools, and ways for sponsors to open doors.</p>
+  <div class="tabs" role="tablist" id="ptabs"><button role="tab" aria-selected="true" data-k="fam">Families</button><button role="tab" aria-selected="false" data-k="sch">Schools</button><button role="tab" aria-selected="false" data-k="spo">Sponsors</button></div>
+  <div class="pk on" id="pk-fam">
+    <div class="pkc"><div class="tag"></div><h3>Explorer</h3><p class="d">A first look at what is out there.</p><ul><li>Mentor &amp; mentee talk sessions</li><li>Guest speaker events</li><li>Community service events</li></ul><button class="btn o pick" data-pkg="Explorer" data-grp="Family">Choose Explorer</button></div>
+    <div class="pkc hot"><div class="tag">Most popular</div><h3>Pathfinder</h3><p class="d">Everything in Explorer, plus real places.</p><ul><li>Everything in Explorer</li><li>College visits</li><li>Museum visits</li><li>Sporting events</li></ul><button class="btn pick" data-pkg="Pathfinder" data-grp="Family">Choose Pathfinder</button></div>
+    <div class="pkc"><div class="tag"></div><h3>Trailblazer</h3><p class="d">The full experience, with workplaces.</p><ul><li>Everything in Pathfinder</li><li>Traveling trips</li><li>Internships &amp; job shadows</li><li>Mentorships with professionals</li></ul><button class="btn o pick" data-pkg="Trailblazer" data-grp="Family">Choose Trailblazer</button></div>
+  </div>
+  <div class="pk" id="pk-sch">
+    <div class="pkc"><div class="tag"></div><h3>Spotlight</h3><p class="d">A focused day of exposure.</p><ul><li>Guest speaker visit</li><li>Career exploration session</li><li>Student Q&amp;A with professionals</li></ul><button class="btn o pick" data-pkg="Spotlight" data-grp="School">Choose Spotlight</button></div>
+    <div class="pkc hot"><div class="tag">Recommended</div><h3>Partner</h3><p class="d">A program across the school term.</p><ul><li>Everything in Spotlight</li><li>College visit day</li><li>Mentor network for students</li><li>Family communication</li></ul><button class="btn pick" data-pkg="Partner" data-grp="School">Choose Partner</button></div>
+    <div class="pkc"><div class="tag"></div><h3>Anchor</h3><p class="d">A full year of structured exploration.</p><ul><li>Everything in Partner</li><li>Internships &amp; job shadows</li><li>Trips and museum visits</li><li>End-of-year review with staff</li></ul><button class="btn o pick" data-pkg="Anchor" data-grp="School">Choose Anchor</button></div>
+  </div>
+  <div class="pk" id="pk-spo">
+    <div class="pkc"><div class="tag"></div><h3>Supporter</h3><p class="d">Help a student take the first step.</p><ul><li>Sponsor activity costs for students</li><li>Updates on what your gift made possible</li></ul><button class="btn o pick" data-pkg="Supporter" data-grp="Sponsor">Choose Supporter</button></div>
+    <div class="pkc hot"><div class="tag">Community pick</div><h3>Champion</h3><p class="d">Open doors for a group of students.</p><ul><li>Sponsor a trip or college visit</li><li>Recognition at program events</li><li>Thank-you from students</li></ul><button class="btn pick" data-pkg="Champion" data-grp="Sponsor">Choose Champion</button></div>
+    <div class="pkc"><div class="tag"></div><h3>Visionary</h3><p class="d">Back a year of exploration.</p><ul><li>Sponsor a full pathway program</li><li>Featured partner recognition</li><li>Meet the students you support</li></ul><button class="btn o pick" data-pkg="Visionary" data-grp="Sponsor">Choose Visionary</button></div>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:20px"><div class="wrap" style="max-width:940px">
+  <div class="sn rv"><i>07</i>Questions</div>
+  <h2 class="rv">Good questions, <em>plain</em> answers.</h2>
+  <div class="rv">
+    <details><summary>Who can join P.A.T.H.?</summary><p>Young people in high school, grades 9 through 12.</p></details>
+    <details><summary>Does it cost anything for a student to take part?</summary><p>Please contact us and we'll walk you through how participation works and any costs involved.</p></details>
+    <details><summary>Where and when do activities take place?</summary><p>Activities take place in and around our community, with a regular meeting place shared with families in advance. Schedules are always sent out ahead of time.</p></details>
+    <details><summary>What do students actually do?</summary><p>They take part in mentor talks, guest speaker sessions, museum visits, trips, college visits, internships and job shadows, sporting events and community service.</p></details>
+    <details><summary>I'm a professional or business owner. How can I help?</summary><p>Host a job shadow or internship, speak to students, or become a mentor. Use the contact form below.</p></details>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap cg">
+  <div class="rv"><div class="sn" style="color:#e8b18d"><i style="color:#fff">08</i>Contact</div><h2>Let's start a conversation.</h2><p style="font-size:19px;max-width:460px">Families, schools, mentors, businesses and sponsors: tell us how you'd like to be involved.</p>
+    <dl><div><dt>Meeting location</dt><dd>[Address, City, State, ZIP]</dd></div><div><dt>Email</dt><dd>[email@yourdomain.org]</dd></div><div><dt>Phone</dt><dd>[Phone]</dd></div></dl></div>
+  <form class="cf rv" action="#" method="post" onsubmit="event.preventDefault();alert('Demo form: will connect to the live form service.')">
+    <input type="text" placeholder="Full name" required aria-label="Full name"><input type="email" placeholder="Email address" required aria-label="Email">
+    <select id="role" aria-label="I am a"><option value="">I am a…</option><option value="parent">Parent / guardian</option><option value="school">School / counselor</option><option value="mentor">Mentor</option><option value="biz">Business / professional</option><option value="spo">Sponsor / donor</option></select>
+    <textarea rows="4" placeholder="How can we help?" aria-label="Message"></textarea>
+    <button class="btn" type="submit">Send message</button>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© <script>document.write(new Date().getFullYear())</script> P.A.T.H. · Preparing Adolescents Through Horizons</span><span>Mentorship · Exposure · Purpose</span></div></footer>
+
+<div class="ov" id="ov" aria-hidden="true"><div class="md" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <button class="x" id="mx" aria-label="Close">&times;</button>
+  <div class="ls"><span class="k">Secure checkout</span><h3 id="mt">Reserve your place</h3><span class="k">Package</span><div class="v" id="mpkg">Pathfinder</div><span class="k">For</span><div class="v" id="mgrp">Family</div><span class="k">Amount</span><div class="v" id="mamt">Confirmed at enrollment</div><p style="margin-top:auto;font-size:13.5px;opacity:.8">&#128274; Card details are entered with our payment provider, never on this site.</p></div>
+  <div class="rs">
+    <div class="steps" id="steps"><i class="on"></i><i></i><i></i></div>
+    <div class="stp on" data-s="0"><h4>Your details</h4><p class="h">So we can confirm your place.</p><input type="text" id="fn" placeholder="Full name" aria-label="Full name"><input type="email" id="fe" placeholder="Email address" aria-label="Email"><div class="nav2"><span></span><button class="btn" data-go="1">Continue</button></div></div>
+    <div class="stp" data-s="1"><h4>Payment</h4><p class="h">Choose how you'd like to pay.</p>
+      <div class="chips" id="mfreq"><button aria-pressed="true">One-time</button><button aria-pressed="false">Monthly</button><button aria-pressed="false">Per term</button></div>
+      <div class="chips" id="mamts"><button aria-pressed="false">$25</button><button aria-pressed="false">$50</button><button aria-pressed="false">$100</button><button aria-pressed="false">$250</button><button aria-pressed="false">Other</button></div>
+      <label class="mm"><input type="radio" name="pm" value="Credit or debit card" checked><span>Credit or debit card</span><small>Visa, Mastercard, Amex</small></label>
+      <label class="mm"><input type="radio" name="pm" value="Apple Pay or Google Pay"><span>Apple Pay or Google Pay</span><small>One tap</small></label>
+      <label class="mm"><input type="radio" name="pm" value="PayPal"><span>PayPal</span><small></small></label>
+      <label class="mm"><input type="radio" name="pm" value="Bank transfer (ACH)"><span>Bank transfer (ACH)</span><small>Lower fees</small></label>
+      <label class="mm"><input type="radio" name="pm" value="Check by mail"><span>Check by mail</span><small></small></label>
+      <div class="nav2"><button class="btn o" data-go="0">Back</button><button class="btn" data-go="2">Review</button></div></div>
+    <div class="stp" data-s="2"><h4>Review</h4><p class="h">Check everything before you continue.</p>
+      <div class="sm"><b>Package</b><span id="rpkg"></span></div><div class="sm"><b>Name</b><span id="rn"></span></div><div class="sm"><b>Email</b><span id="re"></span></div><div class="sm"><b>Payment</b><span id="rpm"></span></div>
+      <div class="nav2"><button class="btn o" data-go="1">Back</button><button class="btn" id="mpay">Continue to payment</button></div><p class="fine">Demo: the final button will open the secure payment page (Stripe, PayPal or your chosen provider).</p></div>
+  </div>
+</div></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* bar + index */
+addEventListener('scroll',()=>{$('#bar').classList.toggle('s',scrollY>30);const h=$('#heroimg');if(h&&!reduce&&scrollY<innerHeight)h.style.transform=`translateY(${scrollY*.08}px) scale(1.04)`},{passive:true});
+const secs=$$('main section[id]'),links=$$('#idx a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>so.observe(s));
+/* reveal */
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.07+'s';io.observe(el)});
+/* programme hover image */
+const fl=$('#float'),fi=fl.querySelector('img');
+$$('.row').forEach(r=>{r.addEventListener('mouseenter',()=>{fi.src='../assets/img/'+r.dataset.img+'.webp';fl.classList.add('on')});r.addEventListener('mouseleave',()=>fl.classList.remove('on'))});
+addEventListener('pointermove',e=>{fl.style.left=e.clientX+'px';fl.style.top=e.clientY+'px'},{passive:true});
+/* pathways */
+const PW=['Campus visits, student conversations and mentors who share their own journeys.','Meet working tradespeople, try the work and visit training programs.','Time inside local businesses with the people who built them.','Art, music, design and media explored alongside working creatives.','Internships, job shadows and mentorships with professionals.','Hands-on interests worth keeping for life, from robotics to the outdoors.'];
+const pb=$$('#pwl button'),pi=$$('#pwr img');
+function pw(i){pb.forEach((b,k)=>b.setAttribute('aria-selected',k===i));pi.forEach((m,k)=>m.classList.toggle('on',k===i));$('#pwcap').textContent=PW[i]}
+pb.forEach((b,i)=>{b.addEventListener('mouseenter',()=>matchMedia('(hover:hover)').matches&&pw(i));b.addEventListener('click',()=>pw(i))});
+/* package tabs */
+$$('#ptabs button').forEach(b=>b.onclick=()=>{$$('#ptabs button').forEach(x=>x.setAttribute('aria-selected',x===b));['fam','sch','spo'].forEach(k=>$('#pk-'+k).classList.toggle('on',k===b.dataset.k))});
+$$('[data-role]').forEach(a=>a.addEventListener('click',()=>$('#role').value=a.dataset.role));
+/* modal stepper */
+const ov=$('#ov');let last,step=0;
+function show(n){step=n;$$('.stp').forEach(s=>s.classList.toggle('on',+s.dataset.s===n));$$('#steps i').forEach((i,k)=>i.classList.toggle('on',k<=n));if(n===2){$('#rpkg').textContent=$('#mpkg').textContent+' ('+$('#mgrp').textContent+')';$('#rn').textContent=$('#fn').value||'Not provided';$('#re').textContent=$('#fe').value||'Not provided';$('#rpm').textContent=document.querySelector('input[name=pm]:checked').value+', '+$('#mfreq [aria-pressed=true]').textContent}}
+$$('.pick').forEach(b=>b.addEventListener('click',()=>{last=document.activeElement;$('#mpkg').textContent=b.dataset.pkg;$('#mgrp').textContent=b.dataset.grp;show(0);ov.classList.add('on');ov.setAttribute('aria-hidden','false');setTimeout(()=>$('#mx').focus(),300)}));
+function closeM(){ov.classList.remove('on');ov.setAttribute('aria-hidden','true');last&&last.focus()}
+$('#mx').onclick=closeM;ov.addEventListener('click',e=>{if(e.target===ov)closeM()});addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+$$('[data-go]').forEach(b=>b.onclick=()=>show(+b.dataset.go));
+['#mfreq','#mamts'].forEach(s=>$$(s+' button').forEach(b=>b.addEventListener('click',()=>{$$(s+' button').forEach(x=>x.setAttribute('aria-pressed',x===b));if(s==='#mamts')$('#mamt').textContent=b.textContent==='Other'?'Custom amount':b.textContent})));
+$('#mpay').onclick=()=>alert('Demo: this will open the secure payment page (Stripe, PayPal or your chosen provider) for the selected package and payment method.');
+</script>
+<script src="../assets/switcher.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P.A.T.H. | Preparing Adolescents Through Horizons</title>
+<meta name="description" content="P.A.T.H. gives teens a clearer view of what comes next through real experiences with careers, trades, colleges and mentors. Build a family package or plan a school partnership in minutes.">
+<meta property="og:title" content="P.A.T.H. | A clearer view of what comes next">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14122b;--mut:#5d5a7a;--violet:#5b4bff;--violet2:#7c6dff;--peach:#ffd2bf;--lav:#d4cfff;--mint:#c4f0e0;--bg:#fbfaff;--card:rgba(255,255,255,.72);--line:rgba(20,18,43,.1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font:17px/1.65 "DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+h1,h2,h3{font-family:Sora,sans-serif;font-weight:700;letter-spacing:-.04em;line-height:1.04}
+a{color:inherit}
+.wrap{max-width:1200px;margin:auto;padding:0 28px}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:10px}
+.grad{background:linear-gradient(100deg,var(--violet),#ff7a9c 55%,#ffa94d);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* mesh bg */
+.mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--bg)}
+.mesh i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.7;animation:drift 22s ease-in-out infinite}
+.mesh i:nth-child(1){width:560px;height:560px;background:var(--lav);left:-120px;top:-100px}
+.mesh i:nth-child(2){width:520px;height:520px;background:var(--peach);right:-120px;top:20%;animation-delay:-7s}
+.mesh i:nth-child(3){width:480px;height:480px;background:var(--mint);left:25%;bottom:-160px;animation-delay:-13s}
+@keyframes drift{50%{transform:translate(60px,-50px) scale(1.12)}}
+/* nav */
+nav.top{position:sticky;top:12px;z-index:80;margin:12px auto 0;max-width:1180px;width:calc(100% - 24px);display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 22px;border-radius:99px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(1.6);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 40px -18px rgba(91,75,255,.35)}
+.brand{display:flex;gap:10px;align-items:center;text-decoration:none;font:800 20px Sora;letter-spacing:-.04em}
+.brand svg{width:32px;height:32px}
+nav.top ul{display:flex;gap:26px;list-style:none;padding:0;font-size:14.5px;font-weight:600}
+nav.top ul a{text-decoration:none;color:#3b3858;transition:.2s}nav.top ul a:hover{color:var(--violet)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff!important;padding:15px 28px;border-radius:99px;font-weight:700;font-size:15.5px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:.3s}
+.btn:hover{background:var(--violet);transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(91,75,255,.7)}
+.btn.v{background:linear-gradient(135deg,var(--violet),var(--violet2))}
+.btn.v:hover{box-shadow:0 18px 40px -10px rgba(91,75,255,.85)}
+.btn.o{background:rgba(255,255,255,.7);color:var(--ink)!important;box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.o:hover{background:#fff;box-shadow:inset 0 0 0 1.5px var(--violet)}
+nav.top .btn{padding:11px 22px;font-size:14px}
+/* hero */
+.hero{padding:70px 0 40px;text-align:center;position:relative}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:99px;background:rgba(255,255,255,.8);border:1px solid var(--line);font-size:13.5px;font-weight:600;color:#3b3858}
+.pill i{width:8px;height:8px;border-radius:50%;background:#2fd08a;box-shadow:0 0 0 0 rgba(47,208,138,.6);animation:pl 2s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 9px rgba(47,208,138,0)}}
+.hero h1{font-size:clamp(38px,min(5.8vw,9.8vh),88px);margin:22px auto 18px;max-width:1120px}
+.hero p.l{font-size:clamp(18px,1.7vw,22px);color:#46435f;max-width:660px;margin:0 auto 32px}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stage{position:relative;height:520px;max-width:1000px;margin:56px auto 0;perspective:1400px}
+.ph{position:absolute;border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(40,30,120,.55);border:6px solid #fff;transition:transform .25s ease-out;transform-style:preserve-3d}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.a{width:330px;height:420px;left:6%;top:50px;--r:-8deg}
+.ph.b{width:400px;height:480px;left:50%;margin-left:-200px;top:0;z-index:3;--r:0deg}
+.ph.c{width:330px;height:410px;right:6%;top:70px;--r:8deg}
+.ph{transform:rotateY(calc(var(--mx,0)*10deg)) rotateX(calc(var(--my,0)*-8deg)) rotate(var(--r))}
+.chip{position:absolute;z-index:5;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-radius:16px;padding:12px 18px;font-weight:700;font-size:14.5px;box-shadow:0 18px 40px -16px rgba(40,30,120,.5);display:flex;align-items:center;gap:10px;animation:fl 6s ease-in-out infinite}
+.chip b{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px}
+.chip.c1{left:0;top:22%}.c1 b{background:var(--peach)}
+.chip.c2{right:0;top:12%;animation-delay:-2s}.c2 b{background:var(--mint)}
+.chip.c3{left:12%;bottom:6%;animation-delay:-4s}.c3 b{background:var(--lav)}
+.chip.c4{right:10%;bottom:10%;animation-delay:-1s}.c4 b{background:#ffe9a8}
+@keyframes fl{50%{transform:translateY(-12px)}}
+/* sections */
+section{padding:110px 0;position:relative}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--violet);margin-bottom:16px;padding:6px 14px;border-radius:99px;background:rgba(91,75,255,.1)}
+h2{font-size:clamp(34px,5vw,70px);margin-bottom:20px}
+.lead{font-size:20px;color:var(--mut);max-width:640px}
+.center{text-align:center}.center .lead{margin:0 auto}
+.glass{background:var(--card);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.85);border-radius:30px;box-shadow:0 30px 70px -40px rgba(60,40,160,.35)}
+.rv{opacity:0;translate:0 34px;transition:opacity .9s,translate .9s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;translate:0}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;position:relative}
+.flow::before{content:"";position:absolute;left:12%;right:12%;top:38px;border-top:3px dashed rgba(91,75,255,.35)}
+.fs{padding:26px 22px;text-align:center;position:relative}
+.fs .n{width:76px;height:76px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--violet),#ff7a9c);color:#fff;font:800 28px Sora;display:grid;place-items:center;box-shadow:0 18px 36px -12px rgba(91,75,255,.6);position:relative;z-index:1}
+.fs h3{font-size:26px;margin-bottom:6px}.fs p{font-size:15.5px;color:var(--mut)}
+.outs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.outs div{padding:24px;display:flex;gap:16px;align-items:flex-start;font-size:16.5px;transition:.3s}
+.outs div:hover{transform:translateY(-6px)}
+.outs b{flex:none;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--violet),var(--violet2));color:#fff;display:grid;place-items:center;font-size:15px}
+.toc{margin-top:20px;padding:54px;background:linear-gradient(135deg,var(--ink),#2a2468);color:#e6e3ff;border-radius:34px;display:grid;grid-template-columns:230px 1fr;gap:40px}
+.toc h3{font-size:30px;color:#ffd2bf}
+.toc p{font-size:20px;line-height:1.6}
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why blockquote{font:700 clamp(32px,4.2vw,58px)/1.06 Sora,sans-serif;letter-spacing:-.04em}
+.why p{color:#46435f;font-size:18.5px;margin-top:16px}
+.why img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:40px;border:8px solid #fff;box-shadow:0 40px 80px -36px rgba(40,30,120,.6)}
+/* planners */
+.tools{padding:34px;margin-top:40px}
+.tt{display:inline-flex;gap:4px;padding:5px;border-radius:99px;background:rgba(20,18,43,.06);margin-bottom:30px}
+.tt button{all:unset;cursor:pointer;white-space:nowrap;padding:12px 26px;border-radius:99px;font-weight:700;font-size:15px;color:var(--mut);transition:.3s}
+.tt button[aria-selected=true]{background:var(--ink);color:#fff}
+.tp{display:none;grid-template-columns:1.1fr .9fr;gap:40px}
+.tp.on{display:grid;animation:fin .5s}
+@keyframes fin{from{opacity:0;translate:0 12px}}
+.tp h3{font-size:clamp(26px,2.8vw,38px);margin-bottom:8px}
+.tp p.h{color:var(--mut);margin-bottom:22px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.acts label{display:flex;gap:12px;align-items:center;padding:13px 16px;border-radius:16px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:600;font-size:15px;transition:.25s}
+.acts label:hover{border-color:var(--violet2)}
+.acts label:has(input:checked){border-color:var(--violet);background:#f1eeff;transform:scale(1.02)}
+.acts input{accent-color:#5b4bff;width:18px;height:18px;margin:0}
+.opts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.opts button{all:unset;cursor:pointer;padding:11px 20px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-weight:600;font-size:15px;transition:.25s}
+.opts button[aria-pressed=true]{background:var(--violet);color:#fff;border-color:var(--violet)}
+.lbl{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--mut);margin:18px 0 10px}
+.out{background:linear-gradient(160deg,#fff,#f1eeff);border:1.5px solid rgba(91,75,255,.25);border-radius:26px;padding:30px;align-self:start;position:sticky;top:110px}
+.out small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--violet)}
+.out h4{font:800 40px Sora;letter-spacing:-.04em;margin:6px 0 8px}
+.out p{color:#46435f;font-size:15.5px;margin-bottom:18px}
+.out ul{list-style:none;padding:0;display:grid;gap:8px;margin-bottom:22px;font-size:15px}
+.out li::before{content:"\2713";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--mint);font-size:11px;font-weight:800;margin-right:10px}
+.out .btn{width:100%;justify-content:center}
+/* stacking pathways */
+.stack{margin-top:50px}
+.sc{position:sticky;top:calc(92px + var(--i)*16px);border-radius:34px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(40,30,120,.4);margin-bottom:30px;min-height:380px}
+.sc .t{padding:44px;display:flex;flex-direction:column;justify-content:center}
+.sc .num{font:800 14px Sora;letter-spacing:.16em;color:var(--violet);margin-bottom:12px}
+.sc h3{font-size:clamp(30px,3.6vw,50px);margin-bottom:12px}
+.sc p{color:var(--mut);font-size:17.5px;max-width:420px}
+.sc img{width:100%;height:100%;object-fit:cover;display:block;min-height:260px}
+.sc:nth-child(odd){background:#fff}.sc:nth-child(2){background:#f7f4ff}.sc:nth-child(3){background:#fff7f2}.sc:nth-child(4){background:#f2fcf8}.sc:nth-child(5){background:#fffbee}.sc:nth-child(6){background:#f4f4ff}
+/* schools families */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:50px}
+.two>div{padding:44px 40px}
+.two h3{font-size:clamp(28px,3vw,40px);margin-bottom:10px}
+.two p.d{color:var(--mut);margin-bottom:20px}
+.two ul{list-style:none;padding:0;display:grid;gap:10px;margin-bottom:26px}
+.two li{display:flex;gap:14px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.7);border:1px solid var(--line);font-size:16px}
+.two li::before{content:"\2713";flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--violet2));color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800}
+.two li b{display:block}.two li span{color:var(--mut);font-size:14.5px}
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.mv>div{padding:44px 40px}
+.mv h3{font-size:30px;margin-bottom:12px}
+.mv p{color:#46435f;margin-bottom:12px}
+/* packages & pay */
+.pk{display:none;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.pk.on{display:grid;animation:fin .5s}
+.card{padding:34px 30px;border-radius:30px;background:#fff;border:1.5px solid var(--line);display:flex;flex-direction:column;position:relative;transition:.35s;cursor:pointer}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(60,40,160,.5)}
+.card.sel{border-color:var(--violet);box-shadow:0 0 0 4px rgba(91,75,255,.18)}
+.card .flag{position:absolute;top:-13px;left:28px;background:linear-gradient(135deg,var(--violet),#ff7a9c);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:99px}
+.card h3{font-size:34px;margin-bottom:4px}.card .d{color:var(--mut);font-size:15.5px;margin-bottom:16px}
+.card ul{list-style:none;padding:0;display:grid;gap:9px;font-size:15.5px;flex:1}
+.card li::before{content:"\2713";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--mint);font-size:11px;font-weight:800;margin-right:10px}
+.card .pickd{margin-top:22px;font-weight:700;color:var(--violet);font-size:14.5px}
+.pay{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;margin-top:40px}
+.pay .sum{padding:40px;background:linear-gradient(160deg,var(--ink),#2a2468);color:#e6e3ff;border-radius:32px;position:sticky;top:100px;align-self:start}
+.pay .sum small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#ffd2bf;display:block;margin-top:18px}
+.pay .sum b{display:block;font:700 28px Sora;color:#fff;letter-spacing:-.03em}
+.pay .sum p{font-size:13.5px;margin-top:26px;opacity:.8}
+.pay .meth{padding:40px}
+.mt{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.mt button{all:unset;cursor:pointer;padding:12px 20px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-weight:700;font-size:14.5px;transition:.25s}
+.mt button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mi{background:#f6f4ff;border-radius:20px;padding:22px 24px;margin-bottom:20px;min-height:100px;font-size:15.5px;color:#3b3858}
+.mi b{display:block;font-size:17px;color:var(--ink);margin-bottom:4px}
+.pay input[type=text],.pay input[type=email]{width:100%;padding:15px 18px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font:inherit;margin-bottom:10px}
+.pay input:focus{outline:2px solid var(--violet);border-color:transparent}
+.pay .btn{width:100%;justify-content:center;margin-top:8px}
+.pay .fine{font-size:13px;color:var(--mut);margin-top:12px;text-align:center}
+/* faq contact */
+details{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 26px;margin-bottom:12px;transition:.3s}
+details[open]{box-shadow:0 20px 40px -24px rgba(60,40,160,.4);border-color:rgba(91,75,255,.3)}
+summary{cursor:pointer;font:600 20px Sora;letter-spacing:-.03em;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";font:300 30px/1 Sora;color:var(--violet);transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;color:var(--mut)}
+.cbox{display:grid;grid-template-columns:1fr 1fr;gap:50px;padding:56px;border-radius:44px;background:linear-gradient(135deg,var(--violet),#8a5bff 60%,#ff7a9c);color:#fff;box-shadow:0 50px 100px -40px rgba(91,75,255,.7)}
+.cbox h2{color:#fff}
+.cbox dl{display:grid;gap:14px;margin-top:26px}
+.cbox dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.8}
+form.cf{display:grid;gap:12px}
+form.cf input[type=text],form.cf input[type=email],form.cf select,form.cf textarea{width:100%;padding:16px 18px;border-radius:16px;border:0;background:rgba(255,255,255,.95);font:inherit;color:var(--ink)}
+form.cf input:focus,form.cf select:focus,form.cf textarea:focus{outline:3px solid #ffd2bf}
+form.cf .btn{background:var(--ink);justify-content:center}
+footer{padding:44px 0 100px;font-size:14.5px;color:var(--mut)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+@media(max-width:980px){nav.top ul{display:none}.why,.tp,.two,.mv,.pay,.cbox,.toc,.sc{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.flow::before{display:none}.outs,.pk{grid-template-columns:1fr}.stage{height:420px}.ph.a{width:230px;height:300px;left:0}.ph.b{width:280px;height:370px;margin-left:-140px}.ph.c{width:230px;height:290px;right:0}.chip{font-size:12.5px;padding:9px 12px}section{padding:76px 0}.out,.pay .sum{position:relative;top:0}.sc{position:relative;top:0}.sc .t{padding:30px 26px}.cbox,.toc,.tools{padding:28px 22px}.two>div,.mv>div,.pay .meth,.pay .sum{padding:28px 22px}}
+@media(max-width:560px){.flow{grid-template-columns:1fr}.acts{grid-template-columns:1fr}.stage{height:360px}.ph.a,.ph.c{display:none}.chip.c3,.chip.c4{display:none}.tt button{padding:11px 18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;translate:0}}
+</style>
+</head>
+<body>
+<div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b4bff"/><stop offset="1" stop-color="#ff7a9c"/></linearGradient><symbol id="mk" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="url(#g)"/><path d="M12 30a12 12 0 0 1 24 0z" fill="#fff"/><path d="M22.5 30 17.500 44h13L25.500 30z" fill="#fff" opacity=".9"/></symbol></defs></svg>
+
+<nav class="top" aria-label="Main">
+  <a class="brand" href="#"><svg><use href="#mk"/></svg>P.A.T.H.</a>
+  <ul><li><a href="#plan">Plan</a></li><li><a href="#pathways">Pathways</a></li><li><a href="#partners">Schools &amp; Families</a></li><li><a href="#packages">Packages</a></li><li><a href="#faq">FAQ</a></li></ul>
+  <a class="btn v" href="#contact">Get started</a>
+</nav>
+
+<header class="hero"><div class="wrap">
+  <span class="pill"><i></i>Community mentoring · Grades 9 to 12</span>
+  <h1>Give every teen a <span class="grad">clearer view</span> of what comes next.</h1>
+  <p class="l">P.A.T.H. empowers young people to discover their interests, explore new opportunities and develop a sense of purpose through real-world experiences, so they can confidently choose a path toward a fulfilling future.</p>
+  <div class="cta"><a class="btn v" href="#plan">Build a plan</a><a class="btn o" href="#packages">See packages</a></div>
+  <div class="stage" id="stage">
+    <div class="ph a"><img src="../assets/img/trades.webp" alt="A teen learning from a skilled tradesperson"></div>
+    <div class="ph b"><img src="../assets/img/laptop.webp" alt="A student on school steps with a laptop and backpack" fetchpriority="high"></div>
+    <div class="ph c"><img src="../assets/img/campus.webp" alt="Teens touring a college campus"></div>
+    <div class="chip c1"><b>&#129309;</b>Mentor talks</div>
+    <div class="chip c2"><b>&#127891;</b>College visits</div>
+    <div class="chip c3"><b>&#128736;</b>Job shadows</div>
+    <div class="chip c4"><b>&#127963;</b>Museum trips</div>
+  </div>
+</div></header>
+
+<section><div class="wrap why">
+  <div class="rv"><span class="eyebrow">The challenge</span><blockquote>Young people cannot pursue opportunities they do not know exist.</blockquote>
+    <p>Some adolescents approach high school graduation with uncertainty about their future, not because they lack ability or potential, but because they may not have had enough opportunities to discover their interests or experience different possibilities firsthand.</p>
+    <p>Traditional career conversations may introduce students to occupations, but P.A.T.H. seeks to move beyond simply telling young people what is available by allowing them to experience, explore, ask questions, connect with mentors, and discover possibilities for themselves.</p></div>
+  <img class="rv" src="../assets/img/parent.webp" alt="A parent and teen looking at a laptop together" loading="lazy">
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap center">
+  <span class="eyebrow">Our approach</span>
+  <h2 class="rv">Exposure creates possibility. <span class="grad">Curiosity</span> creates motivation.</h2>
+  <p class="lead rv">P.A.T.H. believes that exposure creates possibility, exploration sparks curiosity, and meaningful experiences can inspire purpose.</p>
+  <div class="flow">
+    <div class="fs rv"><div class="n">1</div><h3>Exposure</h3><p>Careers, industries, hobbies, trades, education and mentors.</p></div>
+    <div class="fs rv"><div class="n">2</div><h3>Curiosity</h3><p>Hands-on activities spark questions and reveal interests.</p></div>
+    <div class="fs rv"><div class="n">3</div><h3>Motivation</h3><p>Confidence grows as possibilities become real.</p></div>
+    <div class="fs rv"><div class="n">4</div><h3>Purpose</h3><p>Meaningful goals and intentional next steps.</p></div>
+  </div>
+  <h3 class="rv" style="font-size:clamp(24px,2.8vw,36px);margin:60px 0 -26px">When adolescents are intentionally exposed to this breadth, they are more likely to:</h3>
+  <div class="outs" style="text-align:left">
+    <div class="glass rv"><b>1</b>Discover new interests and talents.</div>
+    <div class="glass rv"><b>2</b>Recognize their individual strengths.</div>
+    <div class="glass rv"><b>3</b>Understand the variety of pathways available after high school.</div>
+    <div class="glass rv"><b>4</b>Develop confidence in their ability to pursue those opportunities.</div>
+    <div class="glass rv"><b>5</b>Establish meaningful personal, educational, and career goals.</div>
+    <div class="glass rv"><b>6</b>Take intentional steps toward building the future they want.</div>
+  </div>
+  <div class="toc rv" style="text-align:left"><h3>Our theory of change</h3><p>If P.A.T.H. provides adolescents with meaningful exposure to diverse careers, hobbies, educational pathways, skilled trades, entrepreneurship, mentorship, and real-world experiences, then young people will have greater opportunities to discover their interests, identify their strengths, expand their understanding of what is possible, and develop confidence in their abilities. As a result, they will be better equipped to establish meaningful goals, make informed decisions, and pursue purposeful pathways beyond high school.</p></div>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <div class="center"><span class="eyebrow">Plan in minutes</span><h2 class="rv">Design the right experience.</h2><p class="lead rv">Pick what matters and we'll suggest where to start. Nothing to pay until you're ready.</p></div>
+  <div class="glass tools rv">
+    <div class="tt" role="tablist" id="tt"><button role="tab" aria-selected="true" data-p="f">For a family</button><button role="tab" aria-selected="false" data-p="s">For a school</button></div>
+    <div class="tp on" id="tp-f">
+      <div><h3>What would you like your teen to experience?</h3><p class="h">Tick everything that sounds right.</p>
+        <div class="acts" id="facts">
+          <label><input type="checkbox" data-w="1">Mentor &amp; mentee talks</label><label><input type="checkbox" data-w="1">Guest speakers</label><label><input type="checkbox" data-w="1">Community service</label><label><input type="checkbox" data-w="2">College visits</label><label><input type="checkbox" data-w="2">Museum visits</label><label><input type="checkbox" data-w="2">Sporting events</label><label><input type="checkbox" data-w="3">Traveling trips</label><label><input type="checkbox" data-w="3">Internships &amp; job shadows</label><label><input type="checkbox" data-w="3">Mentorships with professionals</label>
+        </div></div>
+      <div class="out"><small>Suggested package</small><h4 id="fpkg">Explorer</h4><p id="fdesc">A first look at what is out there.</p><ul id="flist"><li>Mentor &amp; mentee talk sessions</li><li>Guest speaker events</li><li>Community service events</li></ul><button class="btn v" id="fgo">Choose this package</button></div>
+    </div>
+    <div class="tp" id="tp-s">
+      <div><h3>Plan a partnership for your school</h3><p class="h">Tell us a little and we'll draft a proposal.</p>
+        <p class="lbl" style="margin-top:0">Number of students</p><div class="opts" id="sn"><button aria-pressed="true">Up to 25</button><button aria-pressed="false">26 to 100</button><button aria-pressed="false">100+</button></div>
+        <p class="lbl">Length</p><div class="opts" id="sl"><button aria-pressed="false">One day</button><button aria-pressed="true">One term</button><button aria-pressed="false">Full year</button></div>
+        <p class="lbl">Focus areas</p><div class="opts" id="sf"><button aria-pressed="true">Careers</button><button aria-pressed="false">Skilled trades</button><button aria-pressed="false">College</button><button aria-pressed="false">Business</button><button aria-pressed="false">Creative</button></div></div>
+      <div class="out"><small>Suggested package</small><h4 id="spkg">Partner</h4><p id="sdesc"></p><ul id="slist"></ul><button class="btn v" id="sgo">Request this proposal</button></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="pathways" style="padding-top:20px"><div class="wrap">
+  <div class="center"><span class="eyebrow">Pathways</span><h2 class="rv">Every path is a <span class="grad">good</span> path.</h2><p class="lead rv">We help every young person find a path that inspires them, whether that leads to college, technical training, entrepreneurship, a skilled trade, employment, creative pursuits, or a meaningful lifelong hobby.</p></div>
+  <div class="stack">
+    <article class="sc" style="--i:0"><div class="t"><div class="num">01</div><h3>College</h3><p>Campus visits, student conversations and mentors who share their own journeys.</p></div><img src="../assets/img/campus.webp" alt="" loading="lazy"></article>
+    <article class="sc" style="--i:1"><div class="t"><div class="num">02</div><h3>Technical training &amp; skilled trades</h3><p>Meet working tradespeople, try the work and visit training programs.</p></div><img src="../assets/img/trades.webp" alt="" loading="lazy"></article>
+    <article class="sc" style="--i:2"><div class="t"><div class="num">03</div><h3>Entrepreneurship</h3><p>Time inside local businesses with the people who built them.</p></div><img src="../assets/img/biz.webp" alt="" loading="lazy"></article>
+    <article class="sc" style="--i:3"><div class="t"><div class="num">04</div><h3>Creative pursuits</h3><p>Art, music, design and media explored alongside working creatives.</p></div><img src="../assets/img/art.webp" alt="" loading="lazy"></article>
+    <article class="sc" style="--i:4"><div class="t"><div class="num">05</div><h3>Employment</h3><p>Internships, job shadows and mentorships with professionals.</p></div><img src="../assets/img/office.webp" alt="" loading="lazy"></article>
+    <article class="sc" style="--i:5"><div class="t"><div class="num">06</div><h3>Lifelong hobbies</h3><p>Hands-on interests worth keeping for life, from robotics to the outdoors.</p></div><img src="../assets/img/robotics.webp" alt="" loading="lazy"></article>
+  </div>
+</div></section>
+
+<section id="partners" style="padding-top:30px"><div class="wrap">
+  <div class="center"><span class="eyebrow">Schools, families &amp; mission</span><h2 class="rv">Built for the people who <span class="grad">guide</span> young people.</h2></div>
+  <div class="two">
+    <div class="glass rv"><h3>For schools &amp; counselors</h3><p class="d">Give students exposure that a classroom alone cannot.</p><ul><li><div><b>Guest speakers in your classrooms</b><span>Professionals from many fields.</span></div></li><li><div><b>College and workplace visits</b><span>Organized trips into real environments.</span></div></li><li><div><b>A mentor network for your students</b><span>Caring adults and local professionals.</span></div></li><li><div><b>Internship and job-shadow connections</b><span>Local businesses and professionals.</span></div></li></ul><a class="btn v" href="#contact" data-role="school">Request a partnership</a></div>
+    <div class="glass rv"><h3>For parents &amp; guardians</h3><p class="d">Your teen's safety comes first. These commitments are built into every program.</p><ul><li><div><b>Screened mentors</b><span>Background checks and references for every adult.</span></div></li><li><div><b>Two-adult rule</b><span>No mentor alone with a student during activities.</span></div></li><li><div><b>Consent and communication</b><span>Permission for trips and internships, schedules in advance.</span></div></li><li><div><b>Photo and privacy care</b><span>Nothing shared without written consent.</span></div></li></ul><a class="btn v" href="#packages">See family packages</a></div>
+  </div>
+  <div class="mv">
+    <div class="glass rv"><h3>Our mission</h3><p>The mission of P.A.T.H. (Preparing Adolescents Through Horizons) is to inspire, expose, and empower young people to explore the possibilities available to them beyond high school. Through meaningful experiences, mentorship, career exploration, hands-on activities, and exposure to diverse opportunities, P.A.T.H. helps adolescents discover their interests, develop their strengths, and build the confidence needed to create a purposeful future.</p><p>We believe that exposure can spark curiosity, curiosity can create motivation, and motivation can lead to purpose.</p></div>
+    <div class="glass rv"><h3>Our vision</h3><p>The vision of P.A.T.H. is to create a future where every young person has the exposure, encouragement, and opportunities needed to discover their passions, recognize their potential, and confidently pursue a meaningful path beyond high school.</p><p>We envision adolescents entering adulthood with a sense of purpose, an understanding of the possibilities available to them, and the motivation to transform their interests and talents into fulfilling educational, career, entrepreneurial, or personal pursuits.</p></div>
+  </div>
+</div></section>
+
+<section id="packages"><div class="wrap">
+  <div class="center"><span class="eyebrow">Packages &amp; checkout</span><h2 class="rv">Choose a package. <span class="grad">Pay securely.</span></h2><p class="lead rv">Programs for families, partnerships for schools, and ways for sponsors to open doors.</p></div>
+  <div style="text-align:center;margin-top:30px"><div class="tt" role="tablist" id="ptabs"><button role="tab" aria-selected="true" data-k="fam">Families</button><button role="tab" aria-selected="false" data-k="sch">Schools</button><button role="tab" aria-selected="false" data-k="spo">Sponsors</button></div></div>
+  <div class="pk on" id="pk-fam">
+    <div class="card" data-pkg="Explorer" data-grp="Family"><h3>Explorer</h3><p class="d">A first look at what is out there.</p><ul><li>Mentor &amp; mentee talk sessions</li><li>Guest speaker events</li><li>Community service events</li></ul><div class="pickd">Select &rarr;</div></div>
+    <div class="card" data-pkg="Pathfinder" data-grp="Family"><span class="flag">Most popular</span><h3>Pathfinder</h3><p class="d">Everything in Explorer, plus real places.</p><ul><li>Everything in Explorer</li><li>College visits</li><li>Museum visits</li><li>Sporting events</li></ul><div class="pickd">Select &rarr;</div></div>
+    <div class="card" data-pkg="Trailblazer" data-grp="Family"><h3>Trailblazer</h3><p class="d">The full experience, with workplaces.</p><ul><li>Everything in Pathfinder</li><li>Traveling trips</li><li>Internships &amp; job shadows</li><li>Mentorships with professionals</li></ul><div class="pickd">Select &rarr;</div></div>
+  </div>
+  <div class="pk" id="pk-sch">
+    <div class="card" data-pkg="Spotlight" data-grp="School"><h3>Spotlight</h3><p class="d">A focused day of exposure.</p><ul><li>Guest speaker visit</li><li>Career exploration session</li><li>Student Q&amp;A with professionals</li></ul><div class="pickd">Select &rarr;</div></div>
+    <div class="card" data-pkg="Partner" data-grp="School"><span class="flag">Recommended</span><h3>Partner</h3><p class="d">A program across the school term.</p><ul><li>Everything in Spotlight</li><li>College visit day</li><li>Mentor network for students</li><li>Family communication</li></ul><div class="pickd">Select &rarr;</div></div>
+    <div class="card" data-pkg="Anchor" data-grp="School"><h3>Anchor</h3><p class="d">A full year of structured exploration.</p><ul><li>Everything in Partner</li><li>Internships &amp; job shadows</li><li>Trips and museum visits</li><li>End-of-year review with staff</li></ul><div class="pickd">Select &rarr;</div></div>
+  </div>
+  <div class="pk" id="pk-spo">
+    <div class="card" data-pkg="Supporter" data-grp="Sponsor"><h3>Supporter</h3><p class="d">Help a student take the first step.</p><ul><li>Sponsor activity costs for students</li><li>Updates on what your gift made possible</li></ul><div class="pickd">Select &rarr;</div></div>
+    <div class="card" data-pkg="Champion" data-grp="Sponsor"><span class="flag">Community pick</span><h3>Champion</h3><p class="d">Open doors for a group of students.</p><ul><li>Sponsor a trip or college visit</li><li>Recognition at program events</li><li>Thank-you from students</li></ul><div class="pickd">Select &rarr;</div></div>
+    <div class="card" data-pkg="Visionary" data-grp="Sponsor"><h3>Visionary</h3><p class="d">Back a year of exploration.</p><ul><li>Sponsor a full pathway program</li><li>Featured partner recognition</li><li>Meet the students you support</li></ul><div class="pickd">Select &rarr;</div></div>
+  </div>
+
+  <div class="pay" id="pay">
+    <div class="sum"><span class="eyebrow" style="background:rgba(255,255,255,.12);color:#ffd2bf">Order summary</span><small>Package</small><b id="spk">Pathfinder</b><small>For</small><b id="sgp">Family</b><small>Payment type</small><b id="sfq">One-time</b><small>Amount</small><b id="sam">Confirmed at enrollment</b><p>&#128274; Card details are entered with our payment provider, never on this site.</p></div>
+    <div class="glass meth">
+      <h3 style="font-size:30px;margin-bottom:6px">Payment</h3><p style="color:var(--mut);margin-bottom:20px">Choose how you'd like to pay.</p>
+      <p class="lbl" style="margin-top:0">Payment type</p><div class="opts" id="pfq"><button aria-pressed="true">One-time</button><button aria-pressed="false">Monthly</button><button aria-pressed="false">Per term</button></div>
+      <p class="lbl">Amount (sponsors and donations)</p><div class="opts" id="pam"><button aria-pressed="false">$25</button><button aria-pressed="false">$50</button><button aria-pressed="false">$100</button><button aria-pressed="false">$250</button><button aria-pressed="false">Other</button></div>
+      <p class="lbl">Payment method</p>
+      <div class="mt" id="mt"><button aria-selected="true" data-i="0">Card</button><button aria-selected="false" data-i="1">Apple / Google Pay</button><button aria-selected="false" data-i="2">PayPal</button><button aria-selected="false" data-i="3">Bank (ACH)</button><button aria-selected="false" data-i="4">Check</button></div>
+      <div class="mi" id="mi"></div>
+      <input type="text" placeholder="Full name" aria-label="Full name"><input type="email" placeholder="Email address" aria-label="Email">
+      <button class="btn v" id="payBtn">Continue to secure payment</button>
+      <p class="fine">Demo: this button will open the secure payment page (Stripe, PayPal or your chosen provider).</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:20px"><div class="wrap" style="max-width:900px">
+  <div class="center"><span class="eyebrow">Questions</span><h2 class="rv">Good questions, plain answers.</h2></div>
+  <div class="rv" style="margin-top:30px">
+    <details><summary>Who can join P.A.T.H.?</summary><p>Young people in high school, grades 9 through 12.</p></details>
+    <details><summary>Does it cost anything for a student to take part?</summary><p>Please contact us and we'll walk you through how participation works and any costs involved.</p></details>
+    <details><summary>Where and when do activities take place?</summary><p>Activities take place in and around our community, with a regular meeting place shared with families in advance. Schedules are always sent out ahead of time.</p></details>
+    <details><summary>What do students actually do?</summary><p>They take part in mentor talks, guest speaker sessions, museum visits, trips, college visits, internships and job shadows, sporting events and community service.</p></details>
+    <details><summary>I'm a professional or business owner. How can I help?</summary><p>Host a job shadow or internship, speak to students, or become a mentor. Use the contact form below.</p></details>
+  </div>
+</div></section>
+
+<section id="contact" style="padding-top:20px"><div class="wrap"><div class="cbox rv">
+  <div><span class="eyebrow" style="background:rgba(255,255,255,.18);color:#fff">Contact</span><h2>Let's start a conversation.</h2><p style="font-size:19px;opacity:.92">Families, schools, mentors, businesses and sponsors: tell us how you'd like to be involved.</p>
+    <dl><div><dt>Meeting location</dt><dd>[Address, City, State, ZIP]</dd></div><div><dt>Email</dt><dd>[email@yourdomain.org]</dd></div><div><dt>Phone</dt><dd>[Phone]</dd></div></dl></div>
+  <form class="cf" action="#" method="post" onsubmit="event.preventDefault();alert('Demo form: will connect to the live form service.')">
+    <input type="text" placeholder="Full name" required aria-label="Full name"><input type="email" placeholder="Email address" required aria-label="Email">
+    <select id="role" aria-label="I am a"><option value="">I am a…</option><option value="parent">Parent / guardian</option><option value="school">School / counselor</option><option value="mentor">Mentor</option><option value="biz">Business / professional</option><option value="spo">Sponsor / donor</option></select>
+    <textarea id="msg" rows="4" placeholder="How can we help?" aria-label="Message"></textarea>
+    <button class="btn" type="submit">Send message</button>
+  </form>
+</div></div></section>
+
+<footer><div class="wrap"><span>© <script>document.write(new Date().getFullYear())</script> P.A.T.H. · Preparing Adolescents Through Horizons</span><span>Mentorship · Exposure · Purpose</span></div></footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* reveal */
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.07+'s';io.observe(el)});
+/* hero tilt */
+const st=$('#stage');
+if(!reduce&&matchMedia('(hover:hover)').matches)st.addEventListener('pointermove',e=>{const r=st.getBoundingClientRect();st.querySelectorAll('.ph').forEach(p=>{p.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));p.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})});
+/* tool tabs */
+$$('#tt button').forEach(b=>b.onclick=()=>{$$('#tt button').forEach(x=>x.setAttribute('aria-selected',x===b));$('#tp-f').classList.toggle('on',b.dataset.p==='f');$('#tp-s').classList.toggle('on',b.dataset.p==='s')});
+/* family builder */
+const FP={Explorer:['A first look at what is out there.',['Mentor & mentee talk sessions','Guest speaker events','Community service events']],Pathfinder:['Everything in Explorer, plus real places.',['Everything in Explorer','College visits','Museum visits','Sporting events']],Trailblazer:['The full experience, with workplaces.',['Everything in Pathfinder','Traveling trips','Internships & job shadows','Mentorships with professionals']]};
+let fcur='Explorer';
+function fcalc(){const c=$$('#facts input');let max=0;c.forEach(i=>{if(i.checked)max=Math.max(max,+i.dataset.w)});fcur=max>=3?'Trailblazer':max===2?'Pathfinder':'Explorer';const d=FP[fcur];$('#fpkg').textContent=fcur;$('#fdesc').textContent=d[0];$('#flist').innerHTML=d[1].map(x=>'<li>'+x+'</li>').join('')}
+$$('#facts input').forEach(i=>i.addEventListener('change',fcalc));
+function selPkg(name,grp){const sel=$$('.card');sel.forEach(c=>c.classList.toggle('sel',c.dataset.pkg===name&&c.dataset.grp===grp));$('#spk').textContent=name;$('#sgp').textContent=grp;$('#pay').scrollIntoView({behavior:'smooth',block:'center'})}
+function showTab(k){$$('#ptabs button').forEach(x=>x.setAttribute('aria-selected',x.dataset.k===k));['fam','sch','spo'].forEach(z=>$('#pk-'+z).classList.toggle('on',z===k))}
+$('#fgo').onclick=()=>{showTab('fam');setTimeout(()=>selPkg(fcur,'Family'),60)};
+/* school planner */
+function pr(sel,fn){$$(sel+' button').forEach(b=>b.addEventListener('click',()=>{$$(sel+' button').forEach(x=>x.setAttribute('aria-pressed',x===b));fn&&fn()}))}
+const val=s=>($(s+' [aria-pressed=true]')||{}).textContent;
+function scalc(){const len=val('#sl'),n=val('#sn');let p=len==='One day'?'Spotlight':len==='Full year'?'Anchor':'Partner';const f=[...$$('#sf [aria-pressed=true]')].map(x=>x.textContent.toLowerCase()).join(', ')||'general exploration';$('#spkg').textContent=p;$('#sdesc').textContent=`${n} students, ${len.toLowerCase()}, focused on ${f}.`;const L={Spotlight:['Guest speaker visit','Career exploration session','Student Q&A with professionals'],Partner:['Guest speakers and career sessions','College visit day','Mentor network for students','Family communication'],Anchor:['Everything in Partner','Internships and job shadows','Trips and museum visits','End-of-year review with staff']};$('#slist').innerHTML=L[p].map(x=>'<li>'+x+'</li>').join('')}
+pr('#sn',scalc);pr('#sl',scalc);$$('#sf button').forEach(b=>b.addEventListener('click',()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');scalc()}));scalc();
+$('#sgo').onclick=()=>{$('#role').value='school';$('#msg').value=`We'd like a ${$('#spkg').textContent} proposal. ${$('#sdesc').textContent}`;$('#contact').scrollIntoView({behavior:'smooth'})};
+$$('[data-role]').forEach(a=>a.addEventListener('click',()=>$('#role').value=a.dataset.role));
+/* package tabs + cards + checkout */
+$$('#ptabs button').forEach(b=>b.onclick=()=>showTab(b.dataset.k));
+$$('.card').forEach(c=>c.addEventListener('click',()=>selPkg(c.dataset.pkg,c.dataset.grp)));
+pr('#pfq',()=>$('#sfq').textContent=val('#pfq'));pr('#pam',()=>{const v=val('#pam');$('#sam').textContent=v==='Other'?'Custom amount':v});
+const MI=[['Credit or debit card','Visa, Mastercard and American Express. You will enter card details on our payment provider\'s secure page.'],['Apple Pay or Google Pay','Pay in one tap using the wallet on your phone or browser.'],['PayPal','Pay with your PayPal balance, bank or card.'],['Bank transfer (ACH)','Pay directly from a US bank account. Lower processing fees.'],['Check by mail','We will send mailing instructions after you submit your details.']];
+function mi(i){$$('#mt button').forEach((b,k)=>b.setAttribute('aria-selected',k===i));$('#mi').innerHTML='<b>'+MI[i][0]+'</b>'+MI[i][1]}
+$$('#mt button').forEach(b=>b.onclick=()=>mi(+b.dataset.i));mi(0);
+$('#payBtn').onclick=()=>alert('Demo: this will open the secure payment page (Stripe, PayPal or your chosen provider) for the selected package and payment method.');
+</script>
+<script src="../assets/switcher.js" defer></script>
+</body>
+</html>

@@ -13,10 +13,12 @@ US-based community mentoring nonprofit. Goal: **zero recurring cost except the d
 
 ## Structure
 ```
-design-a-scrapbook/   Playful taped-photo collage
-design-b-meridian/    Cinematic dark design for parents and schools (packages + checkout UI)
-design-c-atlas/       Bright interactive design (Path Finder, package table, checkout drawer)
-index.html            Chooser page for client review
+design-b-meridian/   Cinematic dark design
+design-c-atlas/      Bright interactive design
+design-d-lumen/      Editorial institutional design
+design-e-orbit/      Gradient futuristic design with planners
+design-a-scrapbook/  Playful taped-photo design (kept last)
+index.html           Chooser page for client review
 ```
 After the client picks, the winning design becomes the site root and gets extra pages
 (About, Programs, Events, Get Involved, Donate, Contact, Privacy).
